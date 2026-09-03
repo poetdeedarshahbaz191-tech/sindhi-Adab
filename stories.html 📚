@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سنڌي ڪهاڻيون | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f7f3ea;
+    color:#183b2b;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#183b2b,#102c20);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border:3px solid #d4af37;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+header h1{
+    margin-top:10px;
+    color:#d4af37;
+    font-size:30px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    overflow-x:auto;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    min-width:max-content;
+}
+
+nav li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:13px 15px;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav li a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    min-height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+
+    background:
+    linear-gradient(rgba(16,44,32,.82),rgba(16,44,32,.82)),
+    url("https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:42px;
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:19px;
+}
+
+/* MAIN */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:45px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:30px;
+    color:#183b2b;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* SEARCH */
+
+.search-box{
+    max-width:650px;
+    margin:0 auto 40px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 20px;
+    border:2px solid #d4af37;
+    border-radius:30px;
+    background:white;
+    font-family:inherit;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box input:focus{
+    box-shadow:0 0 8px rgba(212,175,55,.4);
+}
+
+/* FEATURED */
+
+.featured{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    margin-bottom:50px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-right:5px solid #d4af37;
+}
+
+.featured-content{
+    padding:30px;
+}
+
+.badge{
+    display:inline-block;
+    background:#183b2b;
+    color:#d4af37;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:12px;
+}
+
+.featured h3{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.featured p{
+    color:#555;
+}
+
+/* STORY GRID */
+
+.story-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.story-card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+    border-top:4px solid #d4af37;
+    transition:.3s;
+}
+
+.story-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.story-icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.story-card h3{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.author{
+    color:#8b7324;
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+.story-card p{
+    color:#555;
+    font-size:15px;
+}
+
+.tag{
+    display:inline-block;
+    background:#eee7d7;
+    color:#183b2b;
+    padding:4px 10px;
+    border-radius:15px;
+    margin-top:12px;
+    font-size:13px;
+}
+
+.read-more{
+    display:inline-block;
+    margin-top:18px;
+    color:#183b2b;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.read-more:hover{
+    color:#b38f1d;
+}
+
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin:40px 0;
+}
+
+.category{
+    background:#183b2b;
+    color:white;
+    padding:10px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.category:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* CTA */
+
+.cta{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+    border-radius:18px;
+    margin-top:55px;
+}
+
+.cta h2{
+    color:#d4af37;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+}
+
+.cta a{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    background:#d4af37;
+    color:#102c20;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.cta a:hover{
+    background:white;
+}
+
+/* QUOTE */
+
+.quote{
+    text-align:center;
+    padding:45px 20px;
+    font-size:22px;
+    color:#555;
+    font-style:italic;
+}
+
+.quote span{
+    display:block;
+    color:#183b2b;
+    margin-top:10px;
+    font-size:16px;
+    font-style:normal;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.social{
+    margin:15px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.social a:hover{
+    color:#d4af37;
+}
+
+/* NO RESULT */
+
+.no-result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    color:#777;
+    font-size:18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .story-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav li a{
+        padding:11px 12px;
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">گهر</a></li>
+<li><a href="about.html">اسان بابت</a></li>
+<li><a href="magazine.html">ادبي رسالو</a></li>
+<li><a href="poets.html">شاعر ۽ اديب</a></li>
+<li><a href="stories.html">ڪهاڻيون</a></li>
+<li><a href="events.html">تقريبون</a></li>
+<li><a href="interviews.html">انٽرويوز</a></li>
+<li><a href="archive.html">آرڪائيو</a></li>
+<li><a href="write.html">لکو</a></li>
+
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h2>📚 سنڌي ڪهاڻيون</h2>
+
+<p>
+سنڌي ادب جي خوبصورت ڪهاڻين، افسانن ۽ ادبي تخليقن جو هڪ اهڙو گوشو
+جتي لفظ، احساس ۽ زندگي هڪ ٻئي سان ملن ٿا.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<!-- INTRO -->
+
+<section class="section-title">
+
+<h2>ڪهاڻين جي دنيا</h2>
+
+<p>
+هتي سنڌي ليکڪن ۽ ڪهاڻيڪارن جون چونڊ تخليقون پڙهي سگهجن ٿيون.
+</p>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="storySearch"
+placeholder="🔍 ڪهاڻي، ليکڪ يا موضوع ڳوليو..."
+onkeyup="searchStories()">
+
+</div>
+
+
+<!-- FEATURED STORY -->
+
+<section class="featured">
+
+<div class="featured-content">
+
+<span class="badge">خاص ڪهاڻي</span>
+
+<h3>سنڌ جي مٽيءَ جي خوشبو</h3>
+
+<div class="author">
+✍️ ليکڪ: سنڌي ادبي سنگت
+</div>
+
+<p>
+هيءَ ڪهاڻي سنڌ جي مٽي، ماڻهن، محبت ۽ پنهنجي ڌرتيءَ سان
+لاڳاپيل احساسن جي عڪاسي ڪري ٿي. هڪ اهڙي ڪهاڻي جيڪا
+اسان کي پنهنجي ثقافت ۽ سماج سان ٻيهر جوڙي ٿي.
+</p>
+
+<a href="#" class="read-more">ڪهاڻي پڙهو →</a>
+
+</div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section>
+
+<div class="section-title">
+
+<h2>ڪهاڻين جا قسم</h2>
+
+</div>
+
+<div class="categories">
+
+<a href="#" class="category">مختصر ڪهاڻي</a>
+
+<a href="#" class="category">افسانو</a>
+
+<a href="#" class="category">تاريخي ڪهاڻيون</a>
+
+<a href="#" class="category">سماجي ڪهاڻيون</a>
+
+<a href="#" class="category">ٻارن جون ڪهاڻيون</a>
+
+</div>
+
+</section>
+
+
+<!-- LATEST STORIES -->
+
+<section>
+
+<div class="section-title">
+
+<h2>تازيون ڪهاڻيون</h2>
+
+<p>اسان جي ادبي پليٽ فارم تي شامل ٿيندڙ چونڊ ڪهاڻيون</p>
+
+</div>
+
+
+<div class="story-grid" id="storyGrid">
+
+
+<!-- STORY 1 -->
+
+<article class="story-card">
+
+<div class="story-icon">🌳</div>
+
+<h3>جهنگ جو آخري وڻ</h3>
+
+<div class="author">
+✍️ ليکڪ: عبدالحڪيم
+</div>
+
+<p>
+هڪ ننڍڙي ڳوٺ ۽ ان جي ماڻهن جي ڪهاڻي،
+جتي هڪ پراڻو وڻ ڪيترن نسلن جي يادگيرين جو شاهد بڻجي ٿو.
+</p>
+
+<span class="tag">سماجي ڪهاڻي</span>
+
+<br>
+
+<a href="#" class="read-more">پڙهو →</a>
+
+</article>
+
+
+<!-- STORY 2 -->
+
+<article class="story-card">
+
+<div class="story-icon">🌙</div>
+
+<h3>چنڊ جي روشني</h3>
+
+<div class="author">
+✍️ ليکڪ: شازيه
+</div>
+
+<p>
+هڪ اهڙي ڇوڪري جي ڪهاڻي جيڪا پنهنجي خوابن کي
+حقيقت ۾ بدلائڻ لاءِ سماج جي رڪاوٽن سان مقابلو ڪري ٿي.
+</p>
+
+<span class="tag">مختصر ڪهاڻي</span>
+
+<br>
+
+<a href="#" class="read-more">پڙهو →</a>
+
+</article>
+
+
+<!-- STORY 3 -->
+
+<article class="story-card">
+
+<div class="story-icon">🏡</div>
+
+<h3>ڳوٺ جو آخري گهر</h3>
+
+<div class="author">
+✍️ ليکڪ: علي نواز
+</div>
+
+<p>
+هڪ پراڻي گهر، هڪ خاندان ۽ وقت سان بدلجندڙ
+زندگيءَ جي هڪ جذباتي ڪهاڻي.
+</p>
+
+<span class="tag">افسانو</span>
+
+<br>
+
+<a href="#" class="read-more">پڙهو →</a>
+
+</article>
+
+
+<!-- STORY 4 -->
+
+<article class="story-card">
+
+<div class="story-icon">🕊️</div>
+
+<h3>آزاديءَ جو خواب</h3>
+
+<div class="author">
+✍️ ليکڪ: سنڌي ادبي سنگت</div>
+
+<p>
+هڪ نوجوان جي خوابن، اميدن ۽ پنهنجي مستقبل لاءِ
+جدوجهد جي ڪهاڻي.
+</p>
+
+<span class="tag">سماجي ڪهاڻي</span>
+
+<br>
+
+<a href="#" class="read-more">پڙهو →</a>
+
+</article>
+
+
+<!-- STORY 5 -->
+
+<article class="story-card">
+
+<div class="story-icon">📜</div>
+
+<h3>سنڌ جي سپوت</h3>
+
+<div class="author">
+✍️ ليکڪ: ادبي سنگت</div>
+
+<p>
+سنڌ جي تاريخ ۽ بهادريءَ سان لاڳاپيل هڪ دلچسپ
+تاريخي ڪهاڻي.
+</p>
+
+<span class="tag">تاريخي ڪهاڻي</span>
+
+<br>
+
+<a href="#" class="read-more">پڙهو →</a>
+
+</article>
+
+
+<!-- STORY 6 -->
+
+<article class="story-card">
+
+<div class="story-icon">👦</div>
+
+<h3>ننڍڙي دل جو وڏو خواب</h3>
+
+<div class="author">
+✍️ ليکڪ: ادبي سنگت</div>
+
+<p>
+ٻارن لاءِ هڪ سبق آموز ڪهاڻي، جيڪا محنت،
+ايمانداري ۽ اميد جو پيغام ڏئي ٿي.
+</p>
+
+<span class="tag">ٻارن جي ڪهاڻي</span>
+
+<br>
+
+<a href="#" class="read-more">پڙهو →</a>
+
+</article>
+
+</div>
+
+
+<div class="no-result" id="noResult">
+
+ڪو به نتيجو نه مليو.
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>✍️ توهان به ڪهاڻي لکو</h2>
+
+<p>
+جيڪڏهن توهان وٽ ڪا خوبصورت سنڌي ڪهاڻي، افسانو يا ادبي تخليق آهي،
+ته اها اسان سان شيئر ڪريو. توهان جي تخليق اسان جي ادبي سفر جو حصو بڻجي سگهي ٿي.
+</p>
+
+<a href="write.html">پنهنجي تخليق موڪليو</a>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+“ڪهاڻي صرف لفظن جو مجموعو ناهي،
+اها زندگيءَ جو هڪ عڪس آهي.”
+
+<span>— سنڌي ادبي سنگت شاخ شهدادپور</span>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>سنڌي ادبي سنگت — شاخ شهدادپور</h3>
+
+<p>
+سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ هڪ ادبي پليٽ فارم.
+</p>
+
+<div class="social">
+
+<a href="#">Facebook</a>
+<a href="#">YouTube</a>
+<a href="#">WhatsApp</a>
+
+</div>
+
+<p>
+© 2026 سنڌي ادبي سنگت شاخ شهدادپور — سڀ حق محفوظ آهن.
+</p>
+
+</footer>
+
+
+<!-- SEARCH SCRIPT -->
+
+<script>
+
+function searchStories(){
+
+    let input =
+    document.getElementById("storySearch")
+    .value
+    .toLowerCase()
+    .trim();
+
+    let cards =
+    document.querySelectorAll(".story-card");
+
+    let found = 0;
+
+    cards.forEach(function(card){
+
+        let text =
+        card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+
+            card.style.display = "block";
+            found++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    let noResult =
+    document.getElementById("noResult");
+
+    if(found === 0){
+
+        noResult.style.display = "block";
+
+    }else{
+
+        noResult.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
