@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>پنهنجي تخليق موڪليو | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f7f3ea;
+    color:#183b2b;
+    line-height:2;
+}
+
+header{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:25px 15px 15px;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    font-weight:bold;
+    border:4px solid #f7f3ea;
+}
+
+header h1{
+    margin-top:10px;
+    font-size:30px;
+}
+
+header p{
+    color:#d4af37;
+    font-size:19px;
+}
+
+nav{
+    background:#102c20;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    padding:12px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:15px;
+}
+
+nav a:hover,
+nav a.active{
+    background:#d4af37;
+    color:#102c20;
+}
+
+.hero{
+    background:
+    linear-gradient(rgba(16,44,32,.78),rgba(16,44,32,.78)),
+    url("https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:75px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:20px;
+    color:#f7f3ea;
+}
+
+.container{
+    max-width:1050px;
+    margin:45px auto;
+    padding:0 20px;
+}
+
+.intro{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.intro h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.intro p{
+    max-width:800px;
+    margin:auto;
+    color:#555;
+}
+
+.form-box{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    border-top:5px solid #d4af37;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.full{
+    grid-column:1 / -1;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+    font-size:17px;
+}
+
+.required{
+    color:#b3261e;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:16px;
+    background:#fff;
+    color:#183b2b;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#d4af37;
+    box-shadow:0 0 0 3px rgba(212,175,55,.15);
+}
+
+textarea{
+    min-height:280px;
+    resize:vertical;
+}
+
+.file-box{
+    background:#f7f3ea;
+    padding:18px;
+    border-radius:12px;
+    border:1px dashed #b7aa8a;
+}
+
+.file-box small{
+    display:block;
+    color:#666;
+    margin-top:7px;
+}
+
+.checkbox{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:#f7f3ea;
+    padding:15px;
+    border-radius:10px;
+}
+
+.checkbox input{
+    width:auto;
+    margin-top:9px;
+}
+
+.checkbox label{
+    font-weight:normal;
+    margin:0;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#183b2b;
+    color:white;
+    font-family:inherit;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+.success{
+    display:none;
+    background:#e7f5e9;
+    color:#17652a;
+    border:1px solid #8bc79a;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    text-align:center;
+    font-size:17px;
+}
+
+.info{
+    margin-top:35px;
+    background:#eee7d7;
+    padding:25px;
+    border-radius:15px;
+}
+
+.info h3{
+    margin-bottom:12px;
+}
+
+.info ul{
+    padding-right:25px;
+}
+
+.quote{
+    text-align:center;
+    margin:45px auto;
+    max-width:800px;
+    font-size:22px;
+    color:#183b2b;
+}
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    margin-top:50px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.social{
+    margin:15px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.social a:hover{
+    color:#d4af37;
+}
+
+@media(max-width:700px){
+
+    header h1{
+        font-size:24px;
+    }
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .form-box{
+        padding:22px 17px;
+    }
+
+    nav a{
+        font-size:14px;
+        padding:6px 9px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">گهر</a>
+    <a href="about.html">اسان بابت</a>
+    <a href="magazine.html">ادبي رسالو</a>
+    <a href="poets.html">شاعر ۽ اديب</a>
+    <a href="stories.html">ڪهاڻيون</a>
+    <a href="events.html">تقريبون</a>
+    <a href="interviews.html">انٽرويوز</a>
+    <a href="archive.html">آرڪائيو</a>
+    <a href="write.html" class="active">لکو</a>
+
+</nav>
+
+
+<section class="hero">
+
+    <h2>✍️ پنهنجي تخليق موڪليو</h2>
+
+    <p>
+        سنڌي ادب جي خدمت ۾ پنهنجو حصو شامل ڪريو.
+        پنهنجي شاعري، ڪهاڻي، مضمون، تحقيق يا ٻي ادبي تخليق اسان ڏانهن موڪليو.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+    <div class="intro">
+
+        <h2>تخليق جمع ڪرائڻ وارو فارم</h2>
+
+        <p>
+            هيٺ ڏنل فارم احتياط سان ڀري پنهنجي ادبي تخليق جمع ڪرايو.
+            چونڊيل تخليقون اسان جي رسالي، ويب سائيٽ يا ادبي آرڪائيو ۾ شامل ٿي سگهن ٿيون.
+        </p>
+
+    </div>
+
+
+    <div id="successMessage" class="success">
+
+        ✅ توهان جي تخليق جو فارم ڪاميابي سان تيار ٿي ويو آهي.
+        هي فارم هن وقت ڊيمو موڊ ۾ آهي؛ ايندڙ مرحلي ۾ ان کي Firebase سان ڳنڍيو ويندو.
+
+    </div>
+
+
+    <div class="form-box">
+
+        <form id="submissionForm">
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        توهان جو نالو <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="پنهنجو مڪمل نالو لکو"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ليکڪ جو نالو
+                    </label>
+
+                    <input
+                        type="text"
+                        id="authorName"
+                        placeholder="جيڪڏهن قلمی نالو هجي ته لکو"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        اي ميل
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        موبائل نمبر
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="موبائل نمبر"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        تخليق جو قسم <span class="required">*</span>
+                    </label>
+
+                    <select id="type" required>
+
+                        <option value="">قسم چونڊيو</option>
+
+                        <option value="شاعري">شاعري</option>
+
+                        <option value="ڪهاڻي">ڪهاڻي</option>
+
+                        <option value="افسانو">افسانو</option>
+
+                        <option value="مضمون">مضمون</option>
+
+                        <option value="تحقيق">تحقيقي مضمون</option>
+
+                        <option value="انٽرويو">انٽرويو</option>
+
+                        <option value="تنقيد">ادبي تنقيد</option>
+
+                        <option value="ٻيو">ٻيو</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        تخليق جو عنوان <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="تخليق جو عنوان"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        پنهنجي تخليق هتي لکو <span class="required">*</span>
+                    </label>
+
+                    <textarea
+                        id="content"
+                        placeholder="پنهنجي مڪمل تخليق هتي لکو..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        فائل يا تصوير شامل ڪريو
+                    </label>
+
+                    <div class="file-box">
+
+                        <input
+                            type="file"
+                            id="file"
+                            accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png"
+                        >
+
+                        <small>
+                            اختياري: PDF، Word، Text يا تصويري فائل شامل ڪري سگهو ٿا.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <div class="checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="agreement"
+                            required
+                        >
+
+                        <label for="agreement">
+
+                            مان تصديق ڪريان ٿو ته هي تخليق منهنجي پنهنجي آهي
+                            ۽ سنڌي ادبي سنگت شاخ شهدادپور کي ان کي ادبي مقصدن لاءِ
+                            شايع ڪرڻ جي اجازت ڏيان ٿو.
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <button type="submit">
+                        📤 تخليق موڪليو
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <section class="info">
+
+        <h3>📌 تخليق موڪلڻ لاءِ اهم هدايتون</h3>
+
+        <ul>
+
+            <li>تخليق صاف ۽ پڙهڻ لائق صورت ۾ موڪليو.</li>
+
+            <li>عنوان ۽ ليکڪ جو نالو ضرور لکيو.</li>
+
+            <li>پنهنجي اصل تخليق موڪلڻ کي ترجيح ڏيو.</li>
+
+            <li>ضرورت هجي ته PDF يا Word فائل پڻ شامل ڪري سگهو ٿا.</li>
+
+            <li>منتظمين کي ايڊيٽنگ ۽ ترتيب ڏيڻ جو حق حاصل هوندو.</li>
+
+            <li>چونڊيل تخليقون 15 ڏينهن واري ادبي رسالي ۽ ويب سائيٽ تي شايع ٿي سگهن ٿيون.</li>
+
+        </ul>
+
+    </section>
+
+
+    <div class="quote">
+
+        <p>
+            <strong>
+                "لفظ صرف لفظ ناهن، اهي قوم جي فڪر، احساس ۽ تاريخ جا امين آهن."
+            </strong>
+        </p>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <h3>سنڌي ادبي سنگت شاخ شهدادپور</h3>
+
+    <p>
+        سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ هڪ ادبي پليٽ فارم
+    </p>
+
+    <div class="social">
+
+        <a href="#" target="_blank">Facebook</a>
+
+        <a href="#" target="_blank">YouTube</a>
+
+        <a href="#" target="_blank">WhatsApp</a>
+
+    </div>
+
+    <p>
+        © 2026 سنڌي ادبي سنگت شاخ شهدادپور — سڀ حق محفوظ
+    </p>
+
+</footer>
+
+
+<script>
+
+const form = document.getElementById("submissionForm");
+
+const successMessage = document.getElementById("successMessage");
+
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const type =
+        document.getElementById("type").value;
+
+    const title =
+        document.getElementById("title").value.trim();
+
+    const content =
+        document.getElementById("content").value.trim();
+
+    const agreement =
+        document.getElementById("agreement").checked;
+
+
+    if(!name || !type || !title || !content){
+
+        alert("مهرباني ڪري سڀ ضروري خانا مڪمل ڪريو.");
+
+        return;
+
+    }
+
+
+    if(!agreement){
+
+        alert("مهرباني ڪري تصديق واري خاني کي چونڊيو.");
+
+        return;
+
+    }
+
+
+    successMessage.style.display = "block";
+
+
+    form.reset();
+
+
+    window.scrollTo({
+
+        top: successMessage.offsetTop - 100,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
