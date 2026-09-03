@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ادبي ميڊيا | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f7f3ea;
+    color:#183b2b;
+    line-height:2;
+}
+
+/* HEADER */
+
+header{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:25px 15px 15px;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    font-weight:bold;
+    border:4px solid #f7f3ea;
+}
+
+header h1{
+    margin-top:10px;
+    font-size:30px;
+}
+
+header p{
+    color:#d4af37;
+    font-size:19px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    padding:12px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:15px;
+}
+
+nav a:hover,
+nav a.active{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    linear-gradient(rgba(16,44,32,.80),rgba(16,44,32,.80)),
+    url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h2{
+    font-size:43px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:20px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:45px auto;
+    padding:0 20px;
+}
+
+.intro{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.intro h2{
+    font-size:31px;
+    margin-bottom:10px;
+}
+
+.intro p{
+    max-width:800px;
+    margin:auto;
+    color:#555;
+}
+
+/* FEATURED MEDIA */
+
+.featured{
+    background:#183b2b;
+    color:white;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.featured-image{
+    height:330px;
+    background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.play{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    padding-right:5px;
+}
+
+.featured-content{
+    padding:25px;
+}
+
+.featured-content h3{
+    font-size:27px;
+    color:#d4af37;
+}
+
+.featured-content p{
+    color:#eee;
+}
+
+/* MEDIA GRID */
+
+.media-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.media-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.media-card:hover{
+    transform:translateY(-5px);
+}
+
+.media-image{
+    height:190px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.media-play{
+    position:absolute;
+    left:15px;
+    bottom:15px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+}
+
+.media-content{
+    padding:18px;
+}
+
+.media-content h3{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.media-content p{
+    color:#666;
+    font-size:15px;
+}
+
+.tag{
+    display:inline-block;
+    background:#eee7d7;
+    color:#183b2b;
+    padding:3px 10px;
+    border-radius:15px;
+    margin-top:10px;
+    font-size:13px;
+}
+
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin:40px 0;
+}
+
+.categories a{
+    text-decoration:none;
+    background:white;
+    color:#183b2b;
+    padding:10px 20px;
+    border-radius:25px;
+    border:1px solid #ddd;
+    transition:.3s;
+}
+
+.categories a:hover{
+    background:#d4af37;
+    border-color:#d4af37;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.gallery div{
+    height:170px;
+    border-radius:12px;
+    background-size:cover;
+    background-position:center;
+}
+
+/* CTA */
+
+.cta{
+    margin-top:50px;
+    background:#eee7d7;
+    padding:35px;
+    text-align:center;
+    border-radius:18px;
+}
+
+.cta h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.cta a{
+    display:inline-block;
+    margin-top:15px;
+    background:#183b2b;
+    color:white;
+    text-decoration:none;
+    padding:10px 25px;
+    border-radius:25px;
+}
+
+.cta a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    margin-top:50px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+footer a:hover{
+    color:#d4af37;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .media-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:24px;
+    }
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .media-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .featured-image{
+        height:230px;
+    }
+
+    nav a{
+        font-size:14px;
+        padding:6px 9px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">گهر</a>
+
+    <a href="about.html">اسان بابت</a>
+
+    <a href="magazine.html">ادبي رسالو</a>
+
+    <a href="poets.html">شاعر ۽ اديب</a>
+
+    <a href="stories.html">ڪهاڻيون</a>
+
+    <a href="events.html">تقريبون</a>
+
+    <a href="interviews.html">انٽرويوز</a>
+
+    <a href="archive.html">آرڪائيو</a>
+
+    <a href="media.html" class="active">ميڊيا</a>
+
+    <a href="write.html">لکو</a>
+
+    <a href="contact.html">رابطو</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h2>🎥 ادبي ميڊيا</h2>
+
+    <p>
+        سنڌي ادب جون محفلون، مشاعرا، انٽرويوز،
+        ادبي تقريبون، وڊيوز ۽ يادگار تصويرون هڪ ئي هنڌ.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <h2>ادبي ميڊيا سينٽر</h2>
+
+        <p>
+            سنڌي ادبي سنگت شاخ شهدادپور جي ادبي سرگرمين،
+            شاعرن، اديبن ۽ مختلف پروگرامن جي وڊيو ۽ تصويري
+            رڪارڊ کي محفوظ ڪرڻ لاءِ هي ميڊيا سيڪشن قائم ڪيو ويو آهي.
+        </p>
+
+    </section>
+
+
+    <!-- FEATURED -->
+
+    <section class="featured">
+
+        <div class="featured-image">
+
+            <div class="play">▶</div>
+
+        </div>
+
+        <div class="featured-content">
+
+            <h3>🎤 شامِ سخن — خاص ادبي محفل</h3>
+
+            <p>
+                سنڌي شاعرن ۽ اديبن سان هڪ يادگار ادبي شام.
+                هتي مستقبل ۾ مڪمل وڊيو رڪارڊنگ شامل ڪئي ويندي.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <a href="#">🎤 مشاعرا</a>
+
+        <a href="#">🎙️ انٽرويوز</a>
+
+        <a href="#">📺 ادبي پروگرام</a>
+
+        <a href="#">🏛️ تقريبون</a>
+
+        <a href="#">📸 تصويرون</a>
+
+        <a href="#">🎬 وڊيوز</a>
+
+    </div>
+
+
+    <!-- VIDEO MEDIA -->
+
+    <section>
+
+        <div class="intro">
+
+            <h2>🎬 وڊيوز ۽ ادبي پروگرام</h2>
+
+            <p>
+                سنڌي ادب سان لاڳاپيل اهم وڊيوز ۽ پروگرام.
+            </p>
+
+        </div>
+
+
+        <div class="media-grid">
+
+
+            <article class="media-card">
+
+                <div class="media-image"
+                     style="background-image:url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=900&q=80');">
+
+                    <div class="media-play">▶</div>
+
+                </div>
+
+                <div class="media-content">
+
+                    <h3>شاعرن جي شام</h3>
+
+                    <p>
+                        مقامي شاعرن جي شاعري ۽ ادبي گفتگو.
+                    </p>
+
+                    <span class="tag">مشاعرو</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="media-card">
+
+                <div class="media-image"
+                     style="background-image:url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=900&q=80');">
+
+                    <div class="media-play">▶</div>
+
+                </div>
+
+                <div class="media-content">
+
+                    <h3>اديب سان ملاقات</h3>
+
+                    <p>
+                        سنڌي اديب سان خاص ادبي گفتگو.
+                    </p>
+
+                    <span class="tag">انٽرويو</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="media-card">
+
+                <div class="media-image"
+                     style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80');">
+
+                    <div class="media-play">▶</div>
+
+                </div>
+
+                <div class="media-content">
+
+                    <h3>ادبي تقريب</h3>
+
+                    <p>
+                        سنڌي ادب جي واڌاري لاءِ منعقد ڪيل تقريب.
+                    </p>
+
+                    <span class="tag">تقريب</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="media-card">
+
+                <div class="media-image"
+                     style="background-image:url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=80');">
+
+                    <div class="media-play">▶</div>
+
+                </div>
+
+                <div class="media-content">
+
+                    <h3>مڪمل مشاعرو</h3>
+
+                    <p>
+                        سنڌي شاعرن جي خوبصورت شاعريءَ جي رڪارڊنگ.
+                    </p>
+
+                    <span class="tag">شاعري</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="media-card">
+
+                <div class="media-image"
+                     style="background-image:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80');">
+
+                    <div class="media-play">▶</div>
+
+                </div>
+
+                <div class="media-content">
+
+                    <h3>ادبي گفتگو</h3>
+
+                    <p>
+                        ادب، ٻولي ۽ ثقافت بابت اهم خيال.
+                    </p>
+
+                    <span class="tag">گفتگو</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="media-card">
+
+                <div class="media-image"
+                     style="background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80');">
+
+                    <div class="media-play">▶</div>
+
+                </div>
+
+                <div class="media-content">
+
+                    <h3>خاص ادبي پروگرام</h3>
+
+                    <p>
+                        سنڌي ادب جي مختلف موضوعن تي خاص پروگرام.
+                    </p>
+
+                    <span class="tag">خاص پروگرام</span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+
+    <section style="margin-top:55px;">
+
+        <div class="intro">
+
+            <h2>📸 ادبي تصويري گيلري</h2>
+
+            <p>
+                ادبي سرگرمين ۽ تقريبن جون يادگار تصويرون.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=700&q=80');"></div>
+
+            <div style="background-image:url('https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=700&q=80');"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>✍️ توهان وٽ به ادبي مواد آهي؟</h2>
+
+        <p>
+            پنهنجي شاعري، ڪهاڻي، تصويرون يا ادبي مواد
+            اسان جي پليٽ فارم لاءِ موڪليو.
+        </p>
+
+        <a href="write.html">
+            پنهنجي تخليق موڪليو
+        </a>
+
+    </section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        سنڌي ادبي سنگت شاخ شهدادپور
+    </h3>
+
+    <p>
+        سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ هڪ ادبي پليٽ فارم
+    </p>
+
+    <p style="margin-top:15px;">
+
+        <a href="index.html">گهر</a>
+
+        <a href="magazine.html">رسالو</a>
+
+        <a href="archive.html">آرڪائيو</a>
+
+        <a href="write.html">لکو</a>
+
+        <a href="contact.html">رابطو</a>
+
+    </p>
+
+    <p style="margin-top:15px;">
+
+        © 2026 سنڌي ادبي سنگت شاخ شهدادپور — سڀ حق محفوظ
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
