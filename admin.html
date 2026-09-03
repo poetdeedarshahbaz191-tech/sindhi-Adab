@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f4f6f8;
+    color:#183b2b;
+    line-height:1.8;
+}
+
+/* TOP HEADER */
+
+.topbar{
+    background:#183b2b;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-logo{
+    width:52px;
+    height:52px;
+    background:#d4af37;
+    color:#183b2b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.brand h1{
+    font-size:22px;
+    color:#d4af37;
+}
+
+.brand p{
+    font-size:13px;
+    color:#ddd;
+}
+
+.admin-btn{
+    background:#d4af37;
+    color:#183b2b;
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    font-family:inherit;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* LAYOUT */
+
+.dashboard{
+    display:flex;
+    min-height:calc(100vh - 82px);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:250px;
+    background:#102c20;
+    color:white;
+    padding:20px 12px;
+}
+
+.sidebar-title{
+    color:#d4af37;
+    font-size:18px;
+    padding:8px 12px 15px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    margin-bottom:5px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* MAIN */
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.welcome{
+    margin-bottom:25px;
+}
+
+.welcome h2{
+    font-size:30px;
+}
+
+.welcome p{
+    color:#666;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+    border-right:5px solid #d4af37;
+}
+
+.stat-card .icon{
+    font-size:30px;
+}
+
+.stat-card h3{
+    font-size:28px;
+    color:#183b2b;
+}
+
+.stat-card p{
+    color:#777;
+}
+
+/* QUICK ACTIONS */
+
+.section{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+    margin-bottom:25px;
+}
+
+.section h2{
+    font-size:23px;
+    margin-bottom:18px;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.action{
+    background:#f7f3ea;
+    padding:22px;
+    border-radius:12px;
+    text-align:center;
+    text-decoration:none;
+    color:#183b2b;
+    transition:.3s;
+}
+
+.action:hover{
+    background:#d4af37;
+    transform:translateY(-3px);
+}
+
+.action .icon{
+    font-size:32px;
+}
+
+.action h3{
+    font-size:18px;
+    margin-top:7px;
+}
+
+/* RECENT */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+th{
+    background:#183b2b;
+    color:white;
+}
+
+th,
+td{
+    padding:12px;
+    text-align:right;
+    border-bottom:1px solid #ddd;
+}
+
+td{
+    color:#555;
+}
+
+.status{
+    padding:4px 10px;
+    border-radius:15px;
+    font-size:13px;
+    display:inline-block;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.approved{
+    background:#d4edda;
+    color:#155724;
+}
+
+.draft{
+    background:#e2e3e5;
+    color:#555;
+}
+
+.view-btn{
+    border:none;
+    background:#183b2b;
+    color:white;
+    padding:6px 12px;
+    border-radius:15px;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.view-btn:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:#777;
+    padding:20px;
+}
+
+/* MOBILE */
+
+.menu-toggle{
+    display:none;
+}
+
+@media(max-width:1000px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .actions{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    .topbar{
+        padding:12px 15px;
+    }
+
+    .brand h1{
+        font-size:17px;
+    }
+
+    .brand p{
+        display:none;
+    }
+
+    .admin-btn{
+        font-size:13px;
+        padding:7px 12px;
+    }
+
+    .dashboard{
+        display:block;
+    }
+
+    .sidebar{
+        width:100%;
+        display:flex;
+        overflow-x:auto;
+        padding:10px;
+        gap:5px;
+    }
+
+    .sidebar-title{
+        display:none;
+    }
+
+    .sidebar a{
+        white-space:nowrap;
+        margin:0;
+        padding:8px 12px;
+        font-size:14px;
+    }
+
+    .main{
+        padding:20px 15px;
+    }
+
+    .welcome h2{
+        font-size:24px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:15px;
+    }
+
+    .stat-card h3{
+        font-size:23px;
+    }
+
+    .actions{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .action{
+        padding:15px 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">ادب</div>
+
+        <div>
+
+            <h1>سنڌي ادبي سنگت</h1>
+
+            <p>شاخ شهدادپور — Admin Dashboard</p>
+
+        </div>
+
+    </div>
+
+
+    <button class="admin-btn"
+            onclick="window.location.href='index.html'">
+
+        🌐 ويب سائيٽ ڏسو
+
+    </button>
+
+</header>
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-title">
+
+        📋 انتظامي مينيو
+
+    </div>
+
+
+    <a href="admin.html"
+       class="active">
+
+        🏠 Dashboard
+
+    </a>
+
+
+    <a href="#submissions">
+
+        📥 موڪليل تخليقون
+
+    </a>
+
+
+    <a href="#magazine">
+
+        📰 رسالو
+
+    </a>
+
+
+    <a href="#poets">
+
+        ✍️ شاعر ۽ اديب
+
+    </a>
+
+
+    <a href="#stories">
+
+        📖 ڪهاڻيون
+
+    </a>
+
+
+    <a href="#events">
+
+        🎤 تقريبون
+
+    </a>
+
+
+    <a href="#media">
+
+        🎥 ميڊيا
+
+    </a>
+
+
+    <a href="#gallery">
+
+        📸 گيلري
+
+    </a>
+
+
+    <a href="#messages">
+
+        💬 پيغام
+
+    </a>
+
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+<section class="welcome">
+
+    <h2>ڀليڪار، ايڊمن! 👋</h2>
+
+    <p>
+        هتي توهان سنڌي ادبي سنگت شاخ شهدادپور جي
+        ويب سائيٽ جو سمورو ادبي مواد منظم ڪري سگهو ٿا.
+    </p>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+
+<div class="stat-card">
+
+    <div class="icon">📥</div>
+
+    <h3 id="submissionCount">0</h3>
+
+    <p>موڪليل تخليقون</p>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="icon">📰</div>
+
+    <h3 id="magazineCount">0</h3>
+
+    <p>ادبي رسالا</p>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="icon">🎤</div>
+
+    <h3 id="eventCount">0</h3>
+
+    <p>تقريبون</p>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="icon">💬</div>
+
+    <h3 id="messageCount">0</h3>
+
+    <p>پيغام</p>
+
+</div>
+
+
+</section>
+
+
+<!-- QUICK ACTIONS -->
+
+<section class="section">
+
+    <h2>⚡ تڪڙا آپشن</h2>
+
+
+    <div class="actions">
+
+
+        <a href="write.html" class="action">
+
+            <div class="icon">📥</div>
+
+            <h3>تخليق شامل ڪريو</h3>
+
+        </a>
+
+
+        <a href="magazine.html" class="action">
+
+            <div class="icon">📰</div>
+
+            <h3>رسالو منظم ڪريو</h3>
+
+        </a>
+
+
+        <a href="events.html" class="action">
+
+            <div class="icon">🎤</div>
+
+            <h3>تقريب شامل ڪريو</h3>
+
+        </a>
+
+
+        <a href="media.html" class="action">
+
+            <div class="icon">🎥</div>
+
+            <h3>ميڊيا شامل ڪريو</h3>
+
+        </a>
+
+
+        <a href="gallery.html" class="action">
+
+            <div class="icon">📸</div>
+
+            <h3>تصوير شامل ڪريو</h3>
+
+        </a>
+
+
+        <a href="contact.html" class="action">
+
+            <div class="icon">💬</div>
+
+            <h3>پيغام ڏسو</h3>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- RECENT SUBMISSIONS -->
+
+<section class="section" id="submissions">
+
+    <h2>📥 تازيون موڪليل تخليقون</h2>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ليکڪ</th>
+
+                    <th>عنوان</th>
+
+                    <th>قسم</th>
+
+                    <th>اسٽيٽس</th>
+
+                    <th>عمل</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="submissionTable">
+
+
+                <tr>
+
+                    <td colspan="5"
+                        style="text-align:center;">
+
+                        Firebase سان ڳنڍڻ کان پوءِ
+                        موڪليل تخليقون هتي ظاهر ٿينديون.
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- RECENT MESSAGES -->
+
+<section class="section" id="messages">
+
+    <h2>💬 تازا پيغام</h2>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>نالو</th>
+
+                    <th>موضوع</th>
+
+                    <th>رابطو</th>
+
+                    <th>عمل</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="messageTable">
+
+                <tr>
+
+                    <td colspan="4"
+                        style="text-align:center;">
+
+                        Firebase سان ڳنڍڻ کان پوءِ
+                        پيغام هتي ظاهر ٿيندا.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<div class="footer">
+
+    © 2026 سنڌي ادبي سنگت شاخ شهدادپور
+    — Admin Dashboard
+
+</div>
+
+
+</main>
+
+
+</div>
+
+
+<script>
+
+/*
+=========================================
+ADMIN DASHBOARD
+Firebase connection will be added next.
+=========================================
+*/
+
+
+console.log(
+"سنڌي ادبي سنگت Admin Dashboard Ready"
+);
+
+</script>
+
+
+</body>
+
+</html>
