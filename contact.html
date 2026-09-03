@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>رابطو ڪريو | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f7f3ea;
+    color:#183b2b;
+    line-height:2;
+}
+
+/* HEADER */
+
+header{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:25px 15px 15px;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    font-weight:bold;
+    border:4px solid #f7f3ea;
+}
+
+header h1{
+    margin-top:10px;
+    font-size:30px;
+}
+
+header p{
+    color:#d4af37;
+    font-size:19px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    padding:12px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:15px;
+}
+
+nav a:hover,
+nav a.active{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    linear-gradient(rgba(16,44,32,.80),rgba(16,44,32,.80)),
+    url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:75px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:20px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1050px;
+    margin:45px auto;
+    padding:0 20px;
+}
+
+.intro{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.intro h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.intro p{
+    max-width:800px;
+    margin:auto;
+    color:#555;
+}
+
+/* CONTACT GRID */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* CONTACT CARD */
+
+.contact-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    border-top:5px solid #d4af37;
+}
+
+.contact-card h3{
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.contact-card p{
+    color:#555;
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+/* FORM */
+
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    margin-top:30px;
+    border-top:5px solid #d4af37;
+}
+
+.form-box h3{
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+    font-size:17px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:13px 15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:16px;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#d4af37;
+    box-shadow:0 0 0 3px rgba(212,175,55,.15);
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#183b2b;
+    color:white;
+    font-family:inherit;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+.success{
+    display:none;
+    background:#e7f5e9;
+    color:#17652a;
+    border:1px solid #8bc79a;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+/* SOCIAL */
+
+.social-box{
+    margin-top:30px;
+    background:#eee7d7;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.social-box h3{
+    margin-bottom:15px;
+}
+
+.social-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.social-links a{
+    text-decoration:none;
+    background:#183b2b;
+    color:white;
+    padding:8px 18px;
+    border-radius:25px;
+}
+
+.social-links a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* QUOTE */
+
+.quote{
+    text-align:center;
+    margin:45px auto;
+    max-width:800px;
+    font-size:22px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    margin-top:50px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+footer a:hover{
+    color:#d4af37;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header h1{
+        font-size:24px;
+    }
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-card,
+    .form-box{
+        padding:22px 17px;
+    }
+
+    nav a{
+        font-size:14px;
+        padding:6px 9px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">گهر</a>
+
+    <a href="about.html">اسان بابت</a>
+
+    <a href="magazine.html">ادبي رسالو</a>
+
+    <a href="poets.html">شاعر ۽ اديب</a>
+
+    <a href="stories.html">ڪهاڻيون</a>
+
+    <a href="events.html">تقريبون</a>
+
+    <a href="interviews.html">انٽرويوز</a>
+
+    <a href="archive.html">آرڪائيو</a>
+
+    <a href="write.html">لکو</a>
+
+    <a href="contact.html" class="active">رابطو</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h2>📞 رابطو ڪريو</h2>
+
+    <p>
+        سنڌي ادبي سنگت شاخ شهدادپور سان رابطو ڪريو،
+        پنهنجا سوال، تجويزون ۽ ادبي خيال اسان تائين پهچايو.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <h2>اسان سان رابطو</h2>
+
+        <p>
+            ادب، شاعري، ڪهاڻي، تحقيق، ادبي تقريبن
+            يا هن پليٽ فارم بابت ڪنهن به سوال لاءِ
+            اسان سان رابطو ڪري سگهو ٿا.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <section class="contact-grid">
+
+
+        <div class="contact-card">
+
+            <div class="icon">🏛️</div>
+
+            <h3>سنڌي ادبي سنگت</h3>
+
+            <p>
+                شاخ شهدادپور
+            </p>
+
+            <p>
+                سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ
+                ادبي سرگرمين جو پليٽ فارم.
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">✍️</div>
+
+            <h3>ادبي تخليق موڪليو</h3>
+
+            <p>
+                جيڪڏهن توهان شاعر، ليکڪ يا محقق آهيو،
+                ته پنهنجي تخليق اسان ڏانهن موڪلي سگهو ٿا.
+            </p>
+
+            <p style="margin-top:10px;">
+
+                <a href="write.html"
+                   style="color:#183b2b;font-weight:bold;">
+
+                    ✍️ تخليق موڪلڻ لاءِ هتي ڪلڪ ڪريو
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- CONTACT FORM -->
+
+    <section class="form-box">
+
+        <h3>💬 اسان کي پيغام موڪليو</h3>
+
+
+        <div id="successMessage" class="success">
+
+            ✅ توهان جو پيغام تيار ٿي ويو آهي.
+            هي فارم هن وقت ڊيمو موڊ ۾ آهي؛
+            ايندڙ مرحلي ۾ ان کي Firebase سان ڳنڍيو ويندو.
+
+        </div>
+
+
+        <form id="contactForm">
+
+
+            <div class="form-group">
+
+                <label for="name">
+                    نالو *
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="پنهنجو نالو لکو"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="contact">
+                    اي ميل يا موبائل نمبر
+                </label>
+
+                <input
+                    type="text"
+                    id="contact"
+                    placeholder="اي ميل يا موبائل نمبر"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="subject">
+                    موضوع *
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="پيغام جو موضوع"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    پيغام *
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="پنهنجو پيغام هتي لکو..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit">
+
+                📤 پيغام موڪليو
+
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- SOCIAL -->
+
+    <section class="social-box">
+
+        <h3>🌐 اسان سان سوشل ميڊيا تي ڳنڍيل رهو</h3>
+
+        <div class="social-links">
+
+            <a href="#" target="_blank">
+                Facebook
+            </a>
+
+            <a href="#" target="_blank">
+                YouTube
+            </a>
+
+            <a href="#" target="_blank">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
+
+    <div class="quote">
+
+        <p>
+
+            <strong>
+                "ادب دلين کي ڳنڍيندو آهي ۽ قومن جي سڃاڻپ محفوظ رکندو آهي."
+            </strong>
+
+        </p>
+
+    </div>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        سنڌي ادبي سنگت شاخ شهدادپور
+    </h3>
+
+    <p>
+        سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ هڪ ادبي پليٽ فارم
+    </p>
+
+    <p style="margin-top:15px;">
+
+        <a href="index.html">گهر</a>
+
+        <a href="about.html">اسان بابت</a>
+
+        <a href="write.html">لکو</a>
+
+        <a href="contact.html">رابطو</a>
+
+    </p>
+
+    <p style="margin-top:15px;">
+
+        © 2026 سنڌي ادبي سنگت شاخ شهدادپور — سڀ حق محفوظ
+
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const form = document.getElementById("contactForm");
+
+const successMessage =
+document.getElementById("successMessage");
+
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const name =
+    document.getElementById("name").value.trim();
+
+    const subject =
+    document.getElementById("subject").value.trim();
+
+    const message =
+    document.getElementById("message").value.trim();
+
+
+    if(!name || !subject || !message){
+
+        alert("مهرباني ڪري سڀ ضروري خانا مڪمل ڪريو.");
+
+        return;
+
+    }
+
+
+    successMessage.style.display = "block";
+
+
+    form.reset();
+
+
+    window.scrollTo({
+
+        top: successMessage.offsetTop - 100,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
