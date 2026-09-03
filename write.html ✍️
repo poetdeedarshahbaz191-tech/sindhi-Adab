@@ -236,11 +236,28 @@ button:hover{
     color:#102c20;
 }
 
+button:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
 .success{
     display:none;
     background:#e7f5e9;
     color:#17652a;
     border:1px solid #8bc79a;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    text-align:center;
+    font-size:17px;
+}
+
+.error{
+    display:none;
+    background:#fdeaea;
+    color:#a11b1b;
+    border:1px solid #e6a5a5;
     padding:18px;
     border-radius:10px;
     margin-bottom:25px;
@@ -362,7 +379,10 @@ footer h3{
     <a href="events.html">تقريبون</a>
     <a href="interviews.html">انٽرويوز</a>
     <a href="archive.html">آرڪائيو</a>
+    <a href="media.html">ميڊيا</a>
+    <a href="gallery.html">گيلري</a>
     <a href="write.html" class="active">لکو</a>
+    <a href="contact.html">رابطو</a>
 
 </nav>
 
@@ -395,8 +415,16 @@ footer h3{
 
     <div id="successMessage" class="success">
 
-        ✅ توهان جي تخليق جو فارم ڪاميابي سان تيار ٿي ويو آهي.
-        هي فارم هن وقت ڊيمو موڊ ۾ آهي؛ ايندڙ مرحلي ۾ ان کي Firebase سان ڳنڍيو ويندو.
+        ✅ توهان جي تخليق ڪاميابي سان جمع ٿي وئي آهي!
+        اسان جا منتظم توهان جي تخليق جو جائزو وٺندا.
+
+    </div>
+
+
+    <div id="errorMessage" class="error">
+
+        ❌ تخليق موڪلڻ ۾ مسئلو پيش آيو.
+        مهرباني ڪري ٻيهر ڪوشش ڪريو.
 
     </div>
 
@@ -478,21 +506,13 @@ footer h3{
                     <select id="type" required>
 
                         <option value="">قسم چونڊيو</option>
-
                         <option value="شاعري">شاعري</option>
-
                         <option value="ڪهاڻي">ڪهاڻي</option>
-
                         <option value="افسانو">افسانو</option>
-
                         <option value="مضمون">مضمون</option>
-
                         <option value="تحقيق">تحقيقي مضمون</option>
-
                         <option value="انٽرويو">انٽرويو</option>
-
                         <option value="تنقيد">ادبي تنقيد</option>
-
                         <option value="ٻيو">ٻيو</option>
 
                     </select>
@@ -546,7 +566,8 @@ footer h3{
                         >
 
                         <small>
-                            اختياري: PDF، Word، Text يا تصويري فائل شامل ڪري سگهو ٿا.
+                            فائل اپلوڊ سسٽم جلد Firebase Storage سان شامل ڪيو ويندو.
+                            في الحال تخليق جو متن Firebase Database ۾ محفوظ ٿيندو.
                         </small>
 
                     </div>
@@ -579,8 +600,10 @@ footer h3{
 
                 <div class="form-group full">
 
-                    <button type="submit">
+                    <button type="submit" id="submitButton">
+
                         📤 تخليق موڪليو
+
                     </button>
 
                 </div>
@@ -599,15 +622,10 @@ footer h3{
         <ul>
 
             <li>تخليق صاف ۽ پڙهڻ لائق صورت ۾ موڪليو.</li>
-
             <li>عنوان ۽ ليکڪ جو نالو ضرور لکيو.</li>
-
             <li>پنهنجي اصل تخليق موڪلڻ کي ترجيح ڏيو.</li>
-
             <li>ضرورت هجي ته PDF يا Word فائل پڻ شامل ڪري سگهو ٿا.</li>
-
             <li>منتظمين کي ايڊيٽنگ ۽ ترتيب ڏيڻ جو حق حاصل هوندو.</li>
-
             <li>چونڊيل تخليقون 15 ڏينهن واري ادبي رسالي ۽ ويب سائيٽ تي شايع ٿي سگهن ٿيون.</li>
 
         </ul>
@@ -639,9 +657,7 @@ footer h3{
     <div class="social">
 
         <a href="#" target="_blank">Facebook</a>
-
         <a href="#" target="_blank">YouTube</a>
-
         <a href="#" target="_blank">WhatsApp</a>
 
     </div>
@@ -653,32 +669,104 @@ footer h3{
 </footer>
 
 
-<script>
+<!-- FIREBASE + JAVASCRIPT -->
 
-const form = document.getElementById("submissionForm");
+<script type="module">
 
-const successMessage = document.getElementById("successMessage");
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    set,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 
-form.addEventListener("submit", function(event){
+/* FIREBASE CONFIGURATION */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCZBA8Bi7lV0bDpSYwgzgxV3xUbqP8YhH8",
+
+    authDomain: "sindhi-adab-6ffba.firebaseapp.com",
+
+    databaseURL:
+    "https://sindhi-adab-6ffba-default-rtdb.firebaseio.com",
+
+    projectId: "sindhi-adab-6ffba",
+
+    storageBucket:
+    "sindhi-adab-6ffba.firebasestorage.app",
+
+    messagingSenderId: "956272042717",
+
+    appId:
+    "1:956272042717:web:2c9bbd84c0ebee1d72f134"
+
+};
+
+
+/* INITIALIZE FIREBASE */
+
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+
+/* GET ELEMENTS */
+
+const form =
+document.getElementById("submissionForm");
+
+const successMessage =
+document.getElementById("successMessage");
+
+const errorMessage =
+document.getElementById("errorMessage");
+
+const submitButton =
+document.getElementById("submitButton");
+
+
+/* SUBMIT FORM */
+
+form.addEventListener("submit", async function(event){
 
     event.preventDefault();
 
 
+    successMessage.style.display = "none";
+
+    errorMessage.style.display = "none";
+
+
     const name =
-        document.getElementById("name").value.trim();
+    document.getElementById("name").value.trim();
+
+    const authorName =
+    document.getElementById("authorName").value.trim();
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    const phone =
+    document.getElementById("phone").value.trim();
 
     const type =
-        document.getElementById("type").value;
+    document.getElementById("type").value;
 
     const title =
-        document.getElementById("title").value.trim();
+    document.getElementById("title").value.trim();
 
     const content =
-        document.getElementById("content").value.trim();
+    document.getElementById("content").value.trim();
 
     const agreement =
-        document.getElementById("agreement").checked;
+    document.getElementById("agreement").checked;
 
 
     if(!name || !type || !title || !content){
@@ -699,19 +787,103 @@ form.addEventListener("submit", function(event){
     }
 
 
-    successMessage.style.display = "block";
+    try{
 
 
-    form.reset();
+        submitButton.disabled = true;
+
+        submitButton.innerHTML =
+        "⏳ تخليق موڪلي پئي وڃي...";
 
 
-    window.scrollTo({
+        /* CREATE NEW SUBMISSION */
 
-        top: successMessage.offsetTop - 100,
+        const submissionsRef =
+        ref(database, "submissions");
 
-        behavior: "smooth"
 
-    });
+        const newSubmissionRef =
+        push(submissionsRef);
+
+
+        /* SAVE DATA */
+
+        await set(newSubmissionRef, {
+
+            name: name,
+
+            authorName: authorName,
+
+            email: email,
+
+            phone: phone,
+
+            type: type,
+
+            title: title,
+
+            content: content,
+
+            status: "pending",
+
+            agreement: true,
+
+            createdAt: serverTimestamp()
+
+        });
+
+
+        /* SUCCESS */
+
+        successMessage.style.display = "block";
+
+
+        form.reset();
+
+
+        window.scrollTo({
+
+            top:
+            successMessage.offsetTop - 100,
+
+            behavior: "smooth"
+
+        });
+
+
+    }
+
+    catch(error){
+
+
+        console.error(error);
+
+
+        errorMessage.style.display =
+        "block";
+
+
+        window.scrollTo({
+
+            top:
+            errorMessage.offsetTop - 100,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+    finally{
+
+
+        submitButton.disabled = false;
+
+        submitButton.innerHTML =
+        "📤 تخليق موڪليو";
+
+    }
+
 
 });
 
