@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ادبي تقريبون | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f7f3ea;
+    color:#183b2b;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#183b2b,#102c20);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border:3px solid #d4af37;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+header h1{
+    margin-top:10px;
+    color:#d4af37;
+    font-size:30px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    overflow-x:auto;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    min-width:max-content;
+}
+
+nav li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:13px 15px;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav li a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    min-height:320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+
+    background:
+    linear-gradient(rgba(16,44,32,.82),rgba(16,44,32,.82)),
+    url("https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:42px;
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:19px;
+}
+
+/* MAIN */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:45px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:30px;
+    color:#183b2b;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* EVENT GRID */
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* EVENT CARD */
+
+.event-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.3s;
+    border-top:4px solid #d4af37;
+}
+
+.event-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,.13);
+}
+
+.event-image{
+    height:180px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    linear-gradient(135deg,#183b2b,#315c45);
+    color:#d4af37;
+    font-size:65px;
+}
+
+.event-content{
+    padding:25px;
+}
+
+.event-content h3{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.event-date{
+    color:#8b7324;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.event-place{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.event-content p{
+    color:#555;
+    font-size:15px;
+}
+
+.event-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:9px 20px;
+    background:#183b2b;
+    color:white;
+    border-radius:22px;
+    text-decoration:none;
+}
+
+.event-btn:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* FEATURED EVENT */
+
+.featured-event{
+    background:#183b2b;
+    color:white;
+    border-radius:18px;
+    padding:40px;
+    margin-bottom:55px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.featured-event .star{
+    font-size:50px;
+}
+
+.featured-event h2{
+    color:#d4af37;
+    font-size:31px;
+    margin:10px 0;
+}
+
+.featured-event p{
+    max-width:750px;
+    margin:auto;
+}
+
+.featured-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(255,255,255,.08);
+    padding:12px 22px;
+    border-radius:10px;
+}
+
+.info-box strong{
+    color:#d4af37;
+}
+
+/* PAST EVENTS */
+
+.past-events{
+    background:#eee7d7;
+    padding:40px 25px;
+    border-radius:18px;
+    margin-top:55px;
+}
+
+.past-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.past-item{
+    background:white;
+    padding:20px;
+    border-right:4px solid #d4af37;
+    border-radius:10px;
+}
+
+.past-item h3{
+    margin-bottom:5px;
+}
+
+.past-item p{
+    color:#666;
+}
+
+/* CTA */
+
+.cta{
+    background:white;
+    text-align:center;
+    padding:45px 20px;
+    border-radius:18px;
+    margin-top:55px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.cta h2{
+    color:#183b2b;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    color:#555;
+}
+
+.cta a{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    background:#d4af37;
+    color:#102c20;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.cta a:hover{
+    background:#183b2b;
+    color:white;
+}
+
+/* QUOTE */
+
+.quote{
+    text-align:center;
+    padding:45px 20px;
+    font-size:22px;
+    color:#555;
+    font-style:italic;
+}
+
+.quote span{
+    display:block;
+    color:#183b2b;
+    margin-top:10px;
+    font-size:16px;
+    font-style:normal;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.social{
+    margin:15px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.social a:hover{
+    color:#d4af37;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .event-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .past-list{
+        grid-template-columns:1fr;
+    }
+
+    .featured-event{
+        padding:30px 20px;
+    }
+
+    nav li a{
+        padding:11px 12px;
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">گهر</a></li>
+<li><a href="about.html">اسان بابت</a></li>
+<li><a href="magazine.html">ادبي رسالو</a></li>
+<li><a href="poets.html">شاعر ۽ اديب</a></li>
+<li><a href="stories.html">ڪهاڻيون</a></li>
+<li><a href="events.html">تقريبون</a></li>
+<li><a href="interviews.html">انٽرويوز</a></li>
+<li><a href="archive.html">آرڪائيو</a></li>
+<li><a href="write.html">لکو</a></li>
+
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h2>🎤 ادبي تقريبون</h2>
+
+<p>
+شاعري، مشاعري، ادبي گڏجاڻين، ڪتابن جي مهورت،
+شاعرن سان ملاقاتن ۽ سنڌي ادب جي ٻين خوبصورت پروگرامن جي دنيا.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<!-- INTRO -->
+
+<section class="section-title">
+
+<h2>اسان جون ادبي سرگرميون</h2>
+
+<p>
+سنڌي ادبي سنگت شاخ شهدادپور ادب دوستن، شاعرن، اديبن ۽ نوجوانن
+کي هڪ هنڌ گڏ ڪرڻ لاءِ مختلف ادبي پروگرام منعقد ڪندي.
+</p>
+
+</section>
+
+
+<!-- FEATURED EVENT -->
+
+<section class="featured-event">
+
+<div class="star">🌟</div>
+
+<h2>شامِ سخن — شاعرن سان هڪ شام</h2>
+
+<p>
+سنڌي شاعري، غزل، نظم ۽ ادبي گفتگوءَ سان ڀرپور هڪ يادگار شام،
+جتي شاعر پنهنجي شاعري پيش ڪندا ۽ ادب دوستن سان پنهنجا خيال ونڊيندا.
+</p>
+
+<div class="featured-info">
+
+<div class="info-box">
+<strong>📅 تاريخ:</strong> جلد اعلان ٿيندو
+</div>
+
+<div class="info-box">
+<strong>🕒 وقت:</strong> جلد اعلان ٿيندو
+</div>
+
+<div class="info-box">
+<strong>📍 هنڌ:</strong> شهدادپور
+</div>
+
+</div>
+
+</section>
+
+
+<!-- UPCOMING EVENTS -->
+
+<section>
+
+<div class="section-title">
+
+<h2>ايندڙ تقريبون</h2>
+
+<p>اسان جي ايندڙ ادبي سرگرمين بابت ڄاڻ</p>
+
+</div>
+
+
+<div class="event-grid">
+
+
+<!-- EVENT 1 -->
+
+<article class="event-card">
+
+<div class="event-image">
+🎙️
+</div>
+
+<div class="event-content">
+
+<h3>ادبي مشاعرو</h3>
+
+<div class="event-date">
+📅 تاريخ: جلد اعلان ٿيندو
+</div>
+
+<div class="event-place">
+📍 شهدادپور
+</div>
+
+<p>
+شاعرن جي گڏجاڻي، جتي سنڌي شاعريءَ جا مختلف رنگ
+پيش ڪيا ويندا.
+</p>
+
+<a href="#" class="event-btn">وڌيڪ ڄاڻ</a>
+
+</div>
+
+</article>
+
+
+<!-- EVENT 2 -->
+
+<article class="event-card">
+
+<div class="event-image">
+📖
+</div>
+
+<div class="event-content">
+
+<h3>ڪتاب مهورت</h3>
+
+<div class="event-date">
+📅 تاريخ: جلد اعلان ٿيندو
+</div>
+
+<div class="event-place">
+📍 شهدادپور
+</div>
+
+<p>
+نئين سنڌي ڪتاب جي مهورت ۽ ليکڪ سان ادبي گفتگوءَ
+تي ٻڌل پروگرام.
+</p>
+
+<a href="#" class="event-btn">وڌيڪ ڄاڻ</a>
+
+</div>
+
+</article>
+
+
+<!-- EVENT 3 -->
+
+<article class="event-card">
+
+<div class="event-image">
+🌟
+</div>
+
+<div class="event-content">
+
+<h3>ليجنڊري شاعرن سان شام</h3>
+
+<div class="event-date">
+📅 تاريخ: جلد اعلان ٿيندو
+</div>
+
+<div class="event-place">
+📍 شهدادپور
+</div>
+
+<p>
+سنڌ جي نامور شاعرن جي ادبي زندگي، شاعري ۽ فڪر بابت
+هڪ خاص شام.
+</p>
+
+<a href="#" class="event-btn">وڌيڪ ڄاڻ</a>
+
+</div>
+
+</article>
+
+
+<!-- EVENT 4 -->
+
+<article class="event-card">
+
+<div class="event-image">
+🎥
+</div>
+
+<div class="event-content">
+
+<h3>ادبي وڊيو پروگرام</h3>
+
+<div class="event-date">
+📅 تاريخ: جلد اعلان ٿيندو
+</div>
+
+<div class="event-place">
+📍 آن لائن / شهدادپور
+</div>
+
+<p>
+شاعرن ۽ اديبن سان وڊيو گفتگو، ادبي خبرون ۽ خاص
+پروگرام.
+</p>
+
+<a href="#" class="event-btn">وڌيڪ ڄاڻ</a>
+
+</div>
+
+</article>
+
+
+<!-- EVENT 5 -->
+
+<article class="event-card">
+
+<div class="event-image">
+🖋️
+</div>
+
+<div class="event-content">
+
+<h3>نوجوان اديبن جي گڏجاڻي</h3>
+
+<div class="event-date">
+📅 تاريخ: جلد اعلان ٿيندو
+</div>
+
+<div class="event-place">
+📍 شهدادپور
+</div>
+
+<p>
+نوجوان شاعرن ۽ ليکڪن لاءِ پنهنجي تخليق پيش ڪرڻ
+۽ ادبي گفتگو ڪرڻ جو موقعو.
+</p>
+
+<a href="#" class="event-btn">وڌيڪ ڄاڻ</a>
+
+</div>
+
+</article>
+
+
+<!-- EVENT 6 -->
+
+<article class="event-card">
+
+<div class="event-image">
+🏆
+</div>
+
+<div class="event-content">
+
+<h3>ادبي ايوارڊ تقريب</h3>
+
+<div class="event-date">
+📅 تاريخ: جلد اعلان ٿيندو
+</div>
+
+<div class="event-place">
+📍 شهدادپور
+</div>
+
+<p>
+ادب جي خدمت ڪندڙ شاعرن، اديبن ۽ ادبي شخصيتن جي
+اعزاز ۾ خاص تقريب.
+</p>
+
+<a href="#" class="event-btn">وڌيڪ ڄاڻ</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- PAST EVENTS -->
+
+<section class="past-events">
+
+<div class="section-title">
+
+<h2>گذريل تقريبون</h2>
+
+<p>
+اسان جي ادبي سفر جون يادگار سرگرميون
+</p>
+
+</div>
+
+
+<div class="past-list">
+
+
+<div class="past-item">
+
+<h3>🌹 ادبي گڏجاڻي</h3>
+
+<p>
+شاعرن ۽ اديبن جي گڏجاڻي، جنهن ۾ شاعري ۽ ادبي گفتگو ڪئي وئي.
+</p>
+
+</div>
+
+
+<div class="past-item">
+
+<h3>📚 ڪتاب سان ملاقات</h3>
+
+<p>
+سنڌي ڪتابن ۽ ليکڪن بابت ادبي پروگرام.
+</p>
+
+</div>
+
+
+<div class="past-item">
+
+<h3>🎤 مشاعرو</h3>
+
+<p>
+مقامي شاعرن پاران شاعري پيش ڪرڻ لاءِ خاص مشاعرو.
+</p>
+
+</div>
+
+
+<div class="past-item">
+
+<h3>🌟 شاعرن سان شام</h3>
+
+<p>
+شاعرن جي ادبي زندگي ۽ شاعري بابت يادگار گفتگو.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- PARTICIPATION CTA -->
+
+<section class="cta">
+
+<h2>✍️ توهان به اسان سان شامل ٿيو</h2>
+
+<p>
+جيڪڏهن توهان شاعر، ليکڪ، اديب يا ادب دوست آهيو،
+ته سنڌي ادبي سنگت شاخ شهدادپور جي ادبي سرگرمين ۾ ڀرپور حصو وٺو.
+پنهنجي تخليق موڪليو ۽ ادبي سفر جو حصو بڻجو.
+</p>
+
+<a href="write.html">پنهنجي تخليق موڪليو</a>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+“ادب ماڻهن کي گڏ ڪري ٿو،
+۽ ادبي تقريبون دلين کي ويجهو آڻين ٿيون.”
+
+<span>— سنڌي ادبي سنگت شاخ شهدادپور</span>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>سنڌي ادبي سنگت — شاخ شهدادپور</h3>
+
+<p>
+سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ هڪ ادبي پليٽ فارم.
+</p>
+
+<div class="social">
+
+<a href="#">Facebook</a>
+<a href="#">YouTube</a>
+<a href="#">WhatsApp</a>
+
+</div>
+
+<p>
+© 2026 سنڌي ادبي سنگت شاخ شهدادپور — سڀ حق محفوظ آهن.
+</p>
+
+</footer>
+
+
+</body>
+</html>
