@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<meta name="description"
+content="سنڌي ادبي سنگت شاخ شهدادپور — ادب، شاعري، ڪهاڻيون، مشاعرا، انٽرويوز ۽ سنڌي ادب جو ڊجيٽل آرڪائيو.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+    "Noto Nastaliq Urdu",
+    "Noto Sans Sindhi",
+    Arial,
+    sans-serif;
+    background:#f7f3ea;
+    color:#29231d;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#183b2b,#24583e);
+    color:white;
+    padding:25px 15px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.2);
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    font-weight:bold;
+    border:4px solid white;
+}
+
+header h1{
+    font-size:32px;
+    margin-top:10px;
+}
+
+header p{
+    font-size:17px;
+    opacity:.9;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5px;
+    padding:8px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:16px;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    min-height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+
+    background:
+    linear-gradient(
+        rgba(10,35,24,.78),
+        rgba(10,35,24,.78)
+    ),
+    url("https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h2{
+    font-size:42px;
+    color:#f3d675;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:21px;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#d4af37;
+    color:#102c20;
+    text-decoration:none;
+    padding:10px 24px;
+    border-radius:7px;
+    font-weight:bold;
+    margin:5px;
+}
+
+.btn:hover{
+    background:white;
+}
+
+/* SECTION */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:45px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    color:#183b2b;
+    font-size:30px;
+}
+
+.section-title p{
+    color:#746b61;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+    border-top:4px solid #d4af37;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 22px rgba(0,0,0,.14);
+}
+
+.card .icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#183b2b;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#625a51;
+    font-size:15px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:12px;
+    color:#9a7510;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FEATURED */
+
+.featured{
+    background:#eee7d7;
+}
+
+.featured-box{
+    background:white;
+    border-radius:14px;
+    padding:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.featured-box h3{
+    color:#183b2b;
+    font-size:25px;
+}
+
+.featured-box p{
+    margin:10px 0;
+}
+
+/* QUOTE */
+
+.quote{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.quote p{
+    font-size:25px;
+    max-width:850px;
+    margin:auto;
+}
+
+.quote small{
+    display:block;
+    margin-top:15px;
+    color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    color:#d4af37;
+}
+
+footer p{
+    margin:5px;
+    font-size:14px;
+}
+
+.social{
+    margin:15px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:20px;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.2);
+    margin-top:20px;
+    padding-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    .hero{
+        min-height:360px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    nav a{
+        font-size:14px;
+        padding:6px 9px;
+    }
+
+    .quote p{
+        font-size:20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">🏠 گهر</a>
+    <a href="about.html">اسان بابت</a>
+    <a href="magazine.html">📖 رسالو</a>
+    <a href="poets.html">✍️ شاعر</a>
+    <a href="stories.html">📚 ڪهاڻيون</a>
+    <a href="events.html">🎭 پروگرام</a>
+    <a href="interviews.html">🎙️ انٽرويو</a>
+    <a href="archive.html">🗄️ آرڪائيو</a>
+    <a href="write.html">📝 لکو</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>سنڌي ادب جي خدمت، اسان جو عزم</h2>
+
+        <p>
+            سنڌي ادبي سنگت شاخ شهدادپور جي
+            ادبي سرگرمين، شاعري، ڪهاڻين،
+            مشاعرن ۽ ادبي ورثي جو ڊجيٽل مرڪز
+        </p>
+
+        <a href="magazine.html" class="btn">
+            📖 تازو رسالو پڙهو
+        </a>
+
+        <a href="events.html" class="btn">
+            🎭 ادبي پروگرام
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- WELCOME -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>ڀليڪار</h2>
+
+        <p>
+            سنڌي ادب جي هن ڊجيٽل سفر ۾ اوهان کي ڀليڪار
+        </p>
+
+    </div>
+
+    <div class="featured-box">
+
+        <h3>سنڌي ادبي سنگت شاخ شهدادپور</h3>
+
+        <p>
+            هي پليٽ فارم سنڌي شاعرن، اديبن، ڪهاڻيڪارن،
+            محققن ۽ ادب سان محبت ڪندڙن لاءِ هڪ گڏيل
+            ادبي مرڪز طور تيار ڪيو پيو وڃي.
+        </p>
+
+        <p>
+            هتي اوهان کي شاعري، ڪهاڻيون، مضمون،
+            انٽرويوز، مشاعرا، ادبي تقريبون ۽
+            سنڌي ادب جو ڊجيٽل آرڪائيو ملندو.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN CATEGORIES -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>ادبي دنيا</h2>
+
+        <p>اسان جي پليٽ فارم جون اهم شعبا</p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">📖</div>
+
+            <h3>15 ڏينهن وارو رسالو</h3>
+
+            <p>
+                سنڌي شاعري، ڪهاڻيون، مضمون ۽
+                ادبي مواد هر پندرهن ڏينهن تي.
+            </p>
+
+            <a href="magazine.html">
+                رسالو پڙهو →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">✍️</div>
+
+            <h3>شاعر ۽ اديب</h3>
+
+            <p>
+                سنڌ جي شاعرن ۽ اديبن جو تعارف،
+                تخليقون ۽ ادبي سفر.
+            </p>
+
+            <a href="poets.html">
+                ڏسو →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎭</div>
+
+            <h3>مشاعرا ۽ تقريبون</h3>
+
+            <p>
+                ادبي گڏجاڻين، مشاعرن ۽
+                ثقافتي پروگرامن جي ڪوريج.
+            </p>
+
+            <a href="events.html">
+                پروگرام ڏسو →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎙️</div>
+
+            <h3>شاعرن جا انٽرويو</h3>
+
+            <p>
+                سنڌ جي معروف شاعرن ۽ اديبن سان
+                خاص ادبي گفتگو.
+            </p>
+
+            <a href="interviews.html">
+                انٽرويو ڏسو →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🌟</div>
+
+            <h3>ليجنڊري شاعرن سان شام</h3>
+
+            <p>
+                سنڌ جي وڏن شاعرن جي زندگي،
+                فن ۽ فڪر سان خاص شامون.
+            </p>
+
+            <a href="events.html">
+                وڌيڪ →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🗄️</div>
+
+            <h3>ڊجيٽل ادبي آرڪائيو</h3>
+
+            <p>
+                سنڌي ادب سان لاڳاپيل تاريخي
+                مواد کي محفوظ ڪرڻ جو مرڪز.
+            </p>
+
+            <a href="archive.html">
+                آرڪائيو →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED MAGAZINE -->
+
+<section class="section featured">
+
+    <div class="section-title">
+
+        <h2>📰 تازو ادبي مواد</h2>
+
+        <p>
+            سنڌي ادب مان چونڊ مواد
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">🖋️</div>
+
+            <h3>تازو شعر</h3>
+
+            <p>
+                شاعرن جي نئين شاعري ۽ غزل.
+            </p>
+
+            <a href="poets.html">
+                پڙهو →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📚</div>
+
+            <h3>ڪهاڻي</h3>
+
+            <p>
+                سنڌي ڪهاڻيڪارن جون چونڊ ڪهاڻيون.
+            </p>
+
+            <a href="stories.html">
+                پڙهو →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📰</div>
+
+            <h3>ادبي خبرون</h3>
+
+            <p>
+                سنڌ جي ادبي دنيا جون تازيون خبرون.
+            </p>
+
+            <a href="events.html">
+                ڏسو →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <p>
+        "ادب قومن جي روح جو آواز آهي،
+        ۽ شاعر ان آواز جو ترجمان."
+    </p>
+
+    <small>
+        سنڌي ادبي سنگت — شاخ شهدادپور
+    </small>
+
+</section>
+
+
+<!-- WRITE FOR US -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>📝 پنهنجي تخليق موڪليو</h2>
+
+        <p>
+            اوهان به سنڌي ادب جي هن سفر جو حصو بڻجو
+        </p>
+
+    </div>
+
+
+    <div class="featured-box" style="text-align:center;">
+
+        <p>
+            شاعري، ڪهاڻي، مضمون، تحقيق يا ٻيو
+            ادبي مواد اسان ڏانهن موڪليو.
+        </p>
+
+        <a href="write.html" class="btn">
+            پنهنجي لکڻي موڪليو
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        سنڌي ادبي سنگت شاخ شهدادپور
+    </h3>
+
+    <p>
+        سنڌي ادب — شاعري — ثقافت — تاريخ
+    </p>
+
+
+    <div class="social">
+
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="YouTube">▶️</a>
+        <a href="#" title="WhatsApp">💬</a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © 2026 سنڌي ادبي سنگت شاخ شهدادپور
+        </p>
+
+        <p>
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
