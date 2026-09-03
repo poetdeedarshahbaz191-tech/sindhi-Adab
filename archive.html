@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ادبي آرڪائيو | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Nastaliq Urdu","Noto Sans Sindhi",Arial,sans-serif;
+    background:#f7f3ea;
+    color:#183b2b;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#183b2b,#102c20);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border:3px solid #d4af37;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+header h1{
+    margin-top:10px;
+    color:#d4af37;
+    font-size:30px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    overflow-x:auto;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    min-width:max-content;
+}
+
+nav li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:13px 15px;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav li a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    min-height:320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+
+    background:
+    linear-gradient(rgba(16,44,32,.85),rgba(16,44,32,.85)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:42px;
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:780px;
+    margin:auto;
+    font-size:19px;
+}
+
+/* MAIN */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:45px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:30px;
+    color:#183b2b;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* SEARCH */
+
+.search-box{
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 20px;
+    border:2px solid #d4af37;
+    border-radius:30px;
+    background:white;
+    font-family:inherit;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box input:focus{
+    box-shadow:0 0 8px rgba(212,175,55,.4);
+}
+
+/* ARCHIVE GRID */
+
+.archive-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.archive-card{
+    background:white;
+    border-radius:16px;
+    padding:28px 24px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    border-top:4px solid #d4af37;
+    transition:.3s;
+}
+
+.archive-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+.archive-icon{
+    width:85px;
+    height:85px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    background:#183b2b;
+    color:#d4af37;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+}
+
+.archive-card h3{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.archive-card p{
+    color:#666;
+    font-size:15px;
+}
+
+.archive-meta{
+    margin-top:12px;
+    color:#8b7324;
+    font-size:14px;
+}
+
+.archive-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:9px 22px;
+    background:#183b2b;
+    color:white;
+    text-decoration:none;
+    border-radius:22px;
+}
+
+.archive-btn:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* YEARS */
+
+.year-section{
+    background:#eee7d7;
+    padding:40px 25px;
+    border-radius:18px;
+    margin-top:55px;
+}
+
+.years{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.year{
+    min-width:110px;
+    text-align:center;
+    padding:12px 20px;
+    background:white;
+    color:#183b2b;
+    border:2px solid #d4af37;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.year:hover{
+    background:#183b2b;
+    color:#d4af37;
+}
+
+/* FEATURED ARCHIVE */
+
+.featured{
+    background:#183b2b;
+    color:white;
+    border-radius:18px;
+    padding:40px;
+    margin-top:55px;
+    text-align:center;
+}
+
+.featured .icon{
+    font-size:55px;
+}
+
+.featured h2{
+    color:#d4af37;
+    font-size:30px;
+    margin:10px 0;
+}
+
+.featured p{
+    max-width:750px;
+    margin:auto;
+}
+
+.featured a{
+    display:inline-block;
+    margin-top:20px;
+    padding:11px 28px;
+    background:#d4af37;
+    color:#102c20;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.featured a:hover{
+    background:white;
+}
+
+/* CTA */
+
+.cta{
+    background:white;
+    text-align:center;
+    padding:45px 20px;
+    border-radius:18px;
+    margin-top:55px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.cta h2{
+    color:#183b2b;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.cta p{
+    max-width:750px;
+    margin:auto;
+    color:#555;
+}
+
+.cta a{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    background:#d4af37;
+    color:#102c20;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.cta a:hover{
+    background:#183b2b;
+    color:white;
+}
+
+/* QUOTE */
+
+.quote{
+    text-align:center;
+    padding:45px 20px;
+    font-size:22px;
+    color:#555;
+    font-style:italic;
+}
+
+.quote span{
+    display:block;
+    color:#183b2b;
+    margin-top:10px;
+    font-size:16px;
+    font-style:normal;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.social{
+    margin:15px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.social a:hover{
+    color:#d4af37;
+}
+
+/* NO RESULT */
+
+.no-result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    color:#777;
+    font-size:18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .archive-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .archive-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured{
+        padding:30px 20px;
+    }
+
+    nav li a{
+        padding:11px 12px;
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ادب</div>
+
+    <h1>سنڌي ادبي سنگت</h1>
+
+    <p>شاخ شهدادپور</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">گهر</a></li>
+<li><a href="about.html">اسان بابت</a></li>
+<li><a href="magazine.html">ادبي رسالو</a></li>
+<li><a href="poets.html">شاعر ۽ اديب</a></li>
+<li><a href="stories.html">ڪهاڻيون</a></li>
+<li><a href="events.html">تقريبون</a></li>
+<li><a href="interviews.html">انٽرويوز</a></li>
+<li><a href="archive.html">آرڪائيو</a></li>
+<li><a href="write.html">لکو</a></li>
+
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h2>📚 ادبي آرڪائيو</h2>
+
+<p>
+سنڌي ادبي سنگت شاخ شهدادپور جي ادبي سفر، رسالن،
+شاعري، ڪهاڻين، انٽرويوز ۽ ادبي سرگرمين کي محفوظ ڪرڻ لاءِ ڊجيٽل آرڪائيو.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<!-- INTRO -->
+
+<section class="section-title">
+
+<h2>اسان جو ادبي خزانو</h2>
+
+<p>
+هي آرڪائيو وقت سان گڏ سنڌي ادب جي هڪ قيمتي ڊجيٽل ذخيري ۾ تبديل ٿيندو.
+</p>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="archiveSearch"
+placeholder="🔍 آرڪائيو ۾ ڳوليو..."
+onkeyup="searchArchive()">
+
+</div>
+
+
+<!-- ARCHIVE CONTENT -->
+
+<section>
+
+<div class="section-title">
+
+<h2>آرڪائيو جا شعبا</h2>
+
+<p>
+پنهنجي پسند جو ادبي مواد چونڊيو
+</p>
+
+</div>
+
+
+<div class="archive-grid" id="archiveGrid">
+
+
+<!-- MAGAZINES -->
+
+<article class="archive-card">
+
+<div class="archive-icon">📰</div>
+
+<h3>ادبي رسالا</h3>
+
+<p>
+سنڌي ادبي سنگت شاخ شهدادپور جا 15 ڏينهن وارا
+۽ خاص ادبي شمارا.
+</p>
+
+<div class="archive-meta">
+📚 شمارا: جلد شامل ٿيندا
+</div>
+
+<a href="magazine.html" class="archive-btn">
+رسالا ڏسو
+</a>
+
+</article>
+
+
+<!-- POETRY -->
+
+<article class="archive-card">
+
+<div class="archive-icon">✍️</div>
+
+<h3>شاعري</h3>
+
+<p>
+شاعرن جي غزلن، نظمن، واين ۽ ٻين ادبي تخليقن جو محفوظ ذخيرو.
+</p>
+
+<div class="archive-meta">
+🖋️ شاعر: وقت سان گڏ شامل ٿيندا
+</div>
+
+<a href="poets.html" class="archive-btn">
+شاعري ڏسو
+</a>
+
+</article>
+
+
+<!-- STORIES -->
+
+<article class="archive-card">
+
+<div class="archive-icon">📖</div>
+
+<h3>ڪهاڻيون</h3>
+
+<p>
+سنڌي ڪهاڻين، افسانن ۽ تخليقي ادب جو ڊجيٽل مجموعو.
+</p>
+
+<div class="archive-meta">
+📚 ڪهاڻيون: جلد شامل ٿينديون
+</div>
+
+<a href="stories.html" class="archive-btn">
+ڪهاڻيون ڏسو
+</a>
+
+</article>
+
+
+<!-- INTERVIEWS -->
+
+<article class="archive-card">
+
+<div class="archive-icon">🎙️</div>
+
+<h3>انٽرويوز</h3>
+
+<p>
+شاعرن، اديبن ۽ ادبي شخصيتن سان ٿيل گفتگوءَ جو آرڪائيو.
+</p>
+
+<div class="archive-meta">
+🎤 انٽرويوز: جلد شامل ٿيندا
+</div>
+
+<a href="interviews.html" class="archive-btn">
+انٽرويوز ڏسو
+</a>
+
+</article>
+
+
+<!-- EVENTS -->
+
+<article class="archive-card">
+
+<div class="archive-icon">🎤</div>
+
+<h3>ادبي تقريبون</h3>
+
+<p>
+مشاعرن، ادبي گڏجاڻين، ڪتابن جي مهورت ۽ ٻين پروگرامن جون يادون.
+</p>
+
+<div class="archive-meta">
+📅 پروگرام: وقت سان گڏ شامل ٿيندا
+</div>
+
+<a href="events.html" class="archive-btn">
+تقريبون ڏسو
+</a>
+
+</article>
+
+
+<!-- SPECIAL -->
+
+<article class="archive-card">
+
+<div class="archive-icon">🌟</div>
+
+<h3>خاص شمارا</h3>
+
+<p>
+سالگرهه، خاص شخصيتن ۽ اهم ادبي موقعن تي شايع ٿيندڙ خاص مواد.
+</p>
+
+<div class="archive-meta">
+⭐ خاص مواد: جلد شامل ٿيندو
+</div>
+
+<a href="#" class="archive-btn">
+ڏسو
+</a>
+
+</article>
+
+
+</div>
+
+
+<div class="no-result" id="noResult">
+
+ڪو به آرڪائيو مواد نه مليو.
+
+</div>
+
+</section>
+
+
+<!-- YEAR ARCHIVE -->
+
+<section class="year-section">
+
+<div class="section-title">
+
+<h2>🗓️ سال وار آرڪائيو</h2>
+
+<p>
+ايندڙ وقت ۾ ادبي مواد سال وار ترتيب سان محفوظ ڪيو ويندو.
+</p>
+
+</div>
+
+
+<div class="years">
+
+<a href="#" class="year">2026</a>
+
+<a href="#" class="year">2025</a>
+
+<a href="#" class="year">2024</a>
+
+<a href="#" class="year">2023</a>
+
+<a href="#" class="year">2022</a>
+
+</div>
+
+</section>
+
+
+<!-- FEATURED ARCHIVE -->
+
+<section class="featured">
+
+<div class="icon">🏛️</div>
+
+<h2>سنڌي ادب جو ڊجيٽل ورثو</h2>
+
+<p>
+اسان جو مقصد صرف موجوده ادبي مواد شايع ڪرڻ نه،
+پر سنڌي ادبي سنگت شاخ شهدادپور جي ادبي سفر کي ايندڙ نسلن لاءِ محفوظ ڪرڻ پڻ آهي.
+اڄ جو لکيل لفظ، سڀاڻي تاريخ جو حصو بڻجي سگهي ٿو.
+</p>
+
+<a href="write.html">
+پنهنجو مواد محفوظ ڪرايو
+</a>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>📜 پراڻو ادبي مواد توهان وٽ آهي؟</h2>
+
+<p>
+جيڪڏهن توهان وٽ پراڻا رسالا، تصويرون، شاعري، ڪهاڻيون،
+اخباري تراشا يا سنڌي ادبي سنگت شاخ شهدادپور سان لاڳاپيل ٻيو مواد موجود آهي،
+ته اسان سان شيئر ڪريو ته جيئن ان کي ڊجيٽل آرڪائيو ۾ محفوظ ڪري سگهجي.
+</p>
+
+<a href="write.html">
+مواد موڪليو
+</a>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+“جيڪو ادب محفوظ ڪيو وڃي ٿو،
+اهو ايندڙ نسلن سان ڳالهائيندو رهي ٿو.”
+
+<span>— سنڌي ادبي سنگت شاخ شهدادپور</span>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>سنڌي ادبي سنگت — شاخ شهدادپور</h3>
+
+<p>
+سنڌي ٻولي، ادب ۽ ثقافت جي واڌاري لاءِ هڪ ادبي پليٽ فارم.
+</p>
+
+<div class="social">
+
+<a href="#">Facebook</a>
+<a href="#">YouTube</a>
+<a href="#">WhatsApp</a>
+
+</div>
+
+<p>
+© 2026 سنڌي ادبي سنگت شاخ شهدادپور — سڀ حق محفوظ آهن.
+</p>
+
+</footer>
+
+
+<!-- SEARCH SCRIPT -->
+
+<script>
+
+function searchArchive(){
+
+    let input =
+    document.getElementById("archiveSearch")
+    .value
+    .toLowerCase()
+    .trim();
+
+    let cards =
+    document.querySelectorAll(".archive-card");
+
+    let found = 0;
+
+    cards.forEach(function(card){
+
+        let text =
+        card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+
+            card.style.display = "block";
+            found++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    let noResult =
+    document.getElementById("noResult");
+
+    if(found === 0){
+
+        noResult.style.display = "block";
+
+    }else{
+
+        noResult.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
