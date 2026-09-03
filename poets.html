@@ -1,0 +1,1117 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+شاعر ۽ اديب | سنڌي ادبي سنگت شاخ شهدادپور
+</title>
+
+<meta name="description"
+content="سنڌي ادبي سنگت شاخ شهدادپور جي شاعرن، اديبن ۽ ليکڪن جو ادبي تعارف.">
+
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    font-family:
+    "Noto Nastaliq Urdu",
+    "Noto Sans Sindhi",
+    Arial,
+    sans-serif;
+
+    background:#f7f3ea;
+
+    color:#29231d;
+
+    line-height:1.9;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+
+    background:
+    linear-gradient(
+        135deg,
+        #183b2b,
+        #24583e
+    );
+
+    color:white;
+
+    padding:25px 15px;
+
+    text-align:center;
+
+    box-shadow:
+    0 3px 12px rgba(0,0,0,.2);
+}
+
+
+.logo{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#d4af37;
+
+    color:#183b2b;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    border:4px solid white;
+}
+
+
+header h1{
+
+    font-size:32px;
+
+    margin-top:10px;
+}
+
+
+header p{
+
+    font-size:17px;
+
+    opacity:.9;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+
+    background:#102c20;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    padding:8px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+}
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:8px 14px;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+
+nav a:hover{
+
+    background:#d4af37;
+
+    color:#102c20;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    background:
+
+    linear-gradient(
+        rgba(10,35,24,.84),
+        rgba(10,35,24,.84)
+    ),
+
+    url("https://images.unsplash.com/photo-1455885666463-ff3a1f7fbc91?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+    text-align:center;
+
+    padding:70px 20px;
+}
+
+
+.hero h2{
+
+    font-size:40px;
+
+    color:#f3d675;
+}
+
+
+.hero p{
+
+    max-width:800px;
+
+    margin:10px auto;
+
+    font-size:20px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:45px 20px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+
+.section-title h2{
+
+    color:#183b2b;
+
+    font-size:30px;
+}
+
+
+.section-title p{
+
+    color:#746b61;
+}
+
+
+/* =========================
+   SEARCH AREA
+========================= */
+
+.search-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.08);
+
+    margin-bottom:35px;
+
+    text-align:center;
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    max-width:600px;
+
+    padding:13px 16px;
+
+    border:2px solid #d4af37;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    outline:none;
+
+    text-align:right;
+}
+
+
+.search-box input:focus{
+
+    border-color:#183b2b;
+}
+
+
+/* =========================
+   POETS GRID
+========================= */
+
+.poets-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:22px;
+}
+
+
+/* =========================
+   POET CARD
+========================= */
+
+.poet-card{
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.08);
+
+    border-top:4px solid #d4af37;
+
+    transition:.3s;
+}
+
+
+.poet-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 9px 24px rgba(0,0,0,.14);
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.poet-photo{
+
+    width:120px;
+
+    height:120px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #183b2b,
+        #d4af37
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:45px;
+
+    border:4px solid #eee7d7;
+
+    overflow:hidden;
+}
+
+
+.poet-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.poet-card h3{
+
+    color:#183b2b;
+
+    font-size:23px;
+
+    margin-bottom:5px;
+}
+
+
+.poet-title{
+
+    color:#9a7510;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+
+.poet-card p{
+
+    color:#625a51;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    display:inline-block;
+
+    background:#d4af37;
+
+    color:#102c20;
+
+    text-decoration:none;
+
+    padding:8px 18px;
+
+    border-radius:7px;
+
+    font-weight:bold;
+
+    margin:4px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:15px;
+}
+
+
+.btn:hover{
+
+    background:#183b2b;
+
+    color:white;
+}
+
+
+/* =========================
+   FEATURED POET
+========================= */
+
+.featured{
+
+    background:#eee7d7;
+
+    padding:50px 20px;
+
+    margin-top:20px;
+}
+
+
+.featured-inner{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.08);
+
+    text-align:center;
+}
+
+
+.featured-inner h2{
+
+    color:#183b2b;
+
+    margin-bottom:10px;
+
+    font-size:28px;
+}
+
+
+.featured-inner p{
+
+    max-width:800px;
+
+    margin:10px auto;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   CONTRIBUTION
+========================= */
+
+.contribution{
+
+    max-width:900px;
+
+    margin:45px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.08);
+}
+
+
+.contribution h2{
+
+    color:#183b2b;
+
+    margin-bottom:10px;
+}
+
+
+.contribution p{
+
+    color:#625a51;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+
+    background:#183b2b;
+
+    color:white;
+
+    text-align:center;
+
+    padding:55px 20px;
+}
+
+
+.quote p{
+
+    font-size:25px;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+
+.quote small{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#d4af37;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#102c20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px 15px;
+}
+
+
+footer h3{
+
+    color:#d4af37;
+}
+
+
+footer p{
+
+    margin:5px;
+
+    font-size:14px;
+}
+
+
+.social{
+
+    margin:15px 0;
+}
+
+
+.social a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 8px;
+
+    font-size:20px;
+}
+
+
+.copyright{
+
+    border-top:
+    1px solid rgba(255,255,255,.2);
+
+    margin-top:20px;
+
+    padding-top:15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    header h1{
+
+        font-size:25px;
+    }
+
+
+    .hero h2{
+
+        font-size:30px;
+    }
+
+
+    .hero p{
+
+        font-size:17px;
+    }
+
+
+    nav a{
+
+        font-size:14px;
+
+        padding:6px 9px;
+    }
+
+
+    .poets-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .quote p{
+
+        font-size:20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        ادب
+    </div>
+
+    <h1>
+        سنڌي ادبي سنگت
+    </h1>
+
+    <p>
+        شاخ شهدادپور
+    </p>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="index.html">
+        🏠 گهر
+    </a>
+
+    <a href="about.html">
+        اسان بابت
+    </a>
+
+    <a href="magazine.html">
+        📖 رسالو
+    </a>
+
+    <a href="poets.html">
+        ✍️ شاعر
+    </a>
+
+    <a href="stories.html">
+        📚 ڪهاڻيون
+    </a>
+
+    <a href="events.html">
+        🎭 پروگرام
+    </a>
+
+    <a href="interviews.html">
+        🎙️ انٽرويو
+    </a>
+
+    <a href="archive.html">
+        🗄️ آرڪائيو
+    </a>
+
+    <a href="write.html">
+        📝 لکو
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <h2>
+        ✍️ شاعر ۽ اديب
+    </h2>
+
+    <p>
+        سنڌي ادب جي خدمت ڪندڙ شاعرن،
+        اديبن ۽ ليکڪن جو ادبي تعارف
+    </p>
+
+</section>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="container">
+
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+        <h2>
+            سنڌي شاعر ۽ اديب
+        </h2>
+
+        <p>
+            ادب جي خوبصورت دنيا جا تخليقڪار
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 شاعر يا اديب جو نالو ڳوليو..."
+            onkeyup="searchPoets()"
+        >
+
+    </div>
+
+
+    <!-- POETS -->
+
+    <section class="poets-grid" id="poetsGrid">
+
+
+        <!-- POET 1 -->
+
+        <article class="poet-card">
+
+            <div class="poet-photo">
+                ✍️
+            </div>
+
+            <h3>
+                شاعر جو نالو
+            </h3>
+
+            <div class="poet-title">
+                شاعر
+            </div>
+
+            <p>
+                هتي شاعر جو مختصر ادبي تعارف
+                ۽ سندس ادبي خدمتن بابت معلومات
+                شامل ڪئي ويندي.
+            </p>
+
+            <a href="#" class="btn">
+                پروفائل ڏسو
+            </a>
+
+        </article>
+
+
+        <!-- POET 2 -->
+
+        <article class="poet-card">
+
+            <div class="poet-photo">
+                📖
+            </div>
+
+            <h3>
+                اديب جو نالو
+            </h3>
+
+            <div class="poet-title">
+                اديب / ليکڪ
+            </div>
+
+            <p>
+                هتي اديب جو مختصر تعارف ۽
+                ادبي ڪم بابت معلومات شامل ٿيندي.
+            </p>
+
+            <a href="#" class="btn">
+                پروفائل ڏسو
+            </a>
+
+        </article>
+
+
+        <!-- POET 3 -->
+
+        <article class="poet-card">
+
+            <div class="poet-photo">
+                🖋️
+            </div>
+
+            <h3>
+                شاعر جو نالو
+            </h3>
+
+            <div class="poet-title">
+                شاعر / ڪهاڻيڪار
+            </div>
+
+            <p>
+                هتي شاعر يا ڪهاڻيڪار جو ادبي
+                تعارف شامل ڪيو ويندو.
+            </p>
+
+            <a href="#" class="btn">
+                پروفائل ڏسو
+            </a>
+
+        </article>
+
+
+        <!-- POET 4 -->
+
+        <article class="poet-card">
+
+            <div class="poet-photo">
+                🌿
+            </div>
+
+            <h3>
+                اديب جو نالو
+            </h3>
+
+            <div class="poet-title">
+                محقق / اديب
+            </div>
+
+            <p>
+                هتي محقق يا اديب جي ادبي
+                خدمتن جو مختصر تعارف هوندو.
+            </p>
+
+            <a href="#" class="btn">
+                پروفائل ڏسو
+            </a>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FEATURED POET
+========================= -->
+
+<section class="featured">
+
+    <div class="featured-inner">
+
+        <h2>
+            ⭐ خاص شاعر
+        </h2>
+
+        <p>
+            هر شماري ۾ هڪ شاعر يا اديب کي
+            خاص طور تي پڙهندڙن سان متعارف ڪرايو ويندو.
+        </p>
+
+        <p>
+            هتي شاعر جي زندگي، ادبي سفر،
+            اهم ڪتابن، شاعري ۽ فڪري خدمتن
+            بابت تفصيلي مضمون شامل ڪري سگهجي ٿو.
+        </p>
+
+        <a href="#" class="btn">
+            خاص شاعر پڙهو
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTRIBUTION
+========================= -->
+
+<section class="container">
+
+    <div class="contribution">
+
+        <h2>
+            📝 شاعر ۽ اديب اسان سان رابطو ڪن
+        </h2>
+
+        <p>
+            جيڪڏهن اوهان شاعر، ليکڪ، ڪهاڻيڪار،
+            محقق يا اديب آهيو ته پنهنجي تخليق
+            ۽ ادبي تعارف اسان ڏانهن موڪليو.
+        </p>
+
+        <a href="write.html" class="btn">
+            پنهنجي تخليق موڪليو
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUOTE
+========================= -->
+
+<section class="quote">
+
+    <p>
+        "شاعر لفظن سان خواب ڏسي ٿو،
+        ۽ ادب انهن خوابن کي نسلن تائين محفوظ ڪري ٿو."
+    </p>
+
+    <small>
+        سنڌي ادبي سنگت — شاخ شهدادپور
+    </small>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        سنڌي ادبي سنگت شاخ شهدادپور
+    </h3>
+
+    <p>
+        سنڌي ادب • شاعري • ثقافت • تاريخ
+    </p>
+
+    <div class="social">
+
+        <a href="#">
+            📘
+        </a>
+
+        <a href="#">
+            ▶️
+        </a>
+
+        <a href="#">
+            💬
+        </a>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 سنڌي ادبي سنگت شاخ شهدادپور
+        </p>
+
+        <p>
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     SEARCH JAVASCRIPT
+========================= -->
+
+<script>
+
+function searchPoets(){
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document
+        .querySelectorAll(".poet-card");
+
+
+    cards.forEach(function(card){
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+
+            card.style.display = "";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
