@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اسان بابت | سنڌي ادبي سنگت شاخ شهدادپور</title>
+
+<meta name="description"
+content="سنڌي ادبي سنگت شاخ شهدادپور بابت تعارف، مقصد، مشن ۽ ادبي خدمتون.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+    "Noto Nastaliq Urdu",
+    "Noto Sans Sindhi",
+    Arial,
+    sans-serif;
+
+    background:#f7f3ea;
+    color:#29231d;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#183b2b,#24583e);
+    color:white;
+    padding:25px 15px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.2);
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#d4af37;
+    color:#183b2b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    font-weight:bold;
+    border:4px solid white;
+}
+
+header h1{
+    font-size:32px;
+    margin-top:10px;
+}
+
+header p{
+    font-size:17px;
+    opacity:.9;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#102c20;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5px;
+    padding:8px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:16px;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:#102c20;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    linear-gradient(
+        rgba(10,35,24,.82),
+        rgba(10,35,24,.82)
+    ),
+    url("https://images.unsplash.com/photo-1455885666463-ff3a1f7fbc91?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    text-align:center;
+
+    padding:70px 20px;
+}
+
+.hero h2{
+    font-size:40px;
+    color:#f3d675;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:800px;
+    margin:10px auto;
+}
+
+/* SECTION */
+
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:45px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    color:#183b2b;
+    font-size:30px;
+}
+
+.section-title p{
+    color:#746b61;
+}
+
+/* CONTENT BOX */
+
+.content-box{
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.content-box h3{
+    color:#183b2b;
+    font-size:25px;
+    margin-bottom:10px;
+    border-right:5px solid #d4af37;
+    padding-right:12px;
+}
+
+.content-box p{
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    border-top:4px solid #d4af37;
+}
+
+.card .icon{
+    font-size:42px;
+}
+
+.card h3{
+    color:#183b2b;
+    margin:8px 0;
+}
+
+.card p{
+    color:#625a51;
+}
+
+/* MISSION */
+
+.mission{
+    background:#eee7d7;
+    padding:50px 20px;
+}
+
+.mission-box{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.mission-box h2{
+    color:#183b2b;
+    font-size:32px;
+}
+
+.mission-box p{
+    font-size:20px;
+    margin-top:15px;
+}
+
+/* QUOTE */
+
+.quote{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.quote p{
+    font-size:25px;
+    max-width:850px;
+    margin:auto;
+}
+
+.quote small{
+    display:block;
+    margin-top:15px;
+    color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+    background:#102c20;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    color:#d4af37;
+}
+
+.social{
+    margin:15px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:20px;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.2);
+    margin-top:20px;
+    padding-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    nav a{
+        font-size:14px;
+        padding:6px 9px;
+    }
+
+    .content-box p{
+        font-size:16px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        ادب
+    </div>
+
+    <h1>
+        سنڌي ادبي سنگت
+    </h1>
+
+    <p>
+        شاخ شهدادپور
+    </p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">🏠 گهر</a>
+    <a href="about.html">اسان بابت</a>
+    <a href="magazine.html">📖 رسالو</a>
+    <a href="poets.html">✍️ شاعر</a>
+    <a href="stories.html">📚 ڪهاڻيون</a>
+    <a href="events.html">🎭 پروگرام</a>
+    <a href="interviews.html">🎙️ انٽرويو</a>
+    <a href="archive.html">🗄️ آرڪائيو</a>
+    <a href="write.html">📝 لکو</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h2>
+        اسان بابت
+    </h2>
+
+    <p>
+        سنڌي ادب، ٻولي ۽ ثقافت جي خدمت لاءِ
+        هڪ ادبي سفر
+    </p>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            سنڌي ادبي سنگت شاخ شهدادپور
+        </h2>
+
+        <p>
+            ادب سان محبت ڪندڙن جو گڏيل ادبي پليٽ فارم
+        </p>
+
+    </div>
+
+
+    <div class="content-box">
+
+        <h3>
+            تعارف
+        </h3>
+
+        <p>
+            سنڌي ادبي سنگت شاخ شهدادپور سنڌي ٻولي،
+            ادب، شاعري، ڪهاڻي، تحقيق ۽ ثقافت سان
+            محبت ڪندڙ اديبن ۽ شاعرن لاءِ هڪ ادبي
+            پليٽ فارم آهي.
+        </p>
+
+        <p>
+            اسان جو مقصد سنڌي ادب جي تخليقڪارن کي
+            هڪ اهڙي جاءِ فراهم ڪرڻ آهي، جتي هو پنهنجي
+            تخليقن، خيالن ۽ ادبي سرگرمين کي پڙهندڙن
+            تائين پهچائي سگهن.
+        </p>
+
+        <p>
+            هي ويب پليٽ فارم روايتي ادبي سرگرمين کي
+            جديد ڊجيٽل دنيا سان ڳنڍڻ جي هڪ ڪوشش آهي.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MISSION -->
+
+<section class="mission">
+
+    <div class="mission-box">
+
+        <h2>
+            اسان جو مشن
+        </h2>
+
+        <p>
+            سنڌي ادب کي محفوظ ڪرڻ، نون ليکڪن کي
+            موقعو ڏيڻ، بزرگ شاعرن ۽ اديبن جي ادبي
+            ورثي کي ايندڙ نسلن تائين پهچائڻ ۽
+            سنڌي ٻوليءَ جي واڌاري لاءِ ڪم ڪرڻ.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- OBJECTIVES -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            اسان جا مقصد
+        </h2>
+
+        <p>
+            ادبي سفر جا اهم هدف
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h3>
+                ادب جي واڌ
+            </h3>
+
+            <p>
+                سنڌي ادب جي تخليق ۽ مطالعي کي
+                هٿي ڏيڻ.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                ✍️
+            </div>
+
+            <h3>
+                نون ليکڪن جي همت افزائي
+            </h3>
+
+            <p>
+                نون شاعرن ۽ ليکڪن کي پنهنجو
+                فن پيش ڪرڻ جو موقعو ڏيڻ.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🏛️
+            </div>
+
+            <h3>
+                ادبي ورثو
+            </h3>
+
+            <p>
+                سنڌ جي ادبي تاريخ ۽ تخليقن کي
+                ڊجيٽل صورت ۾ محفوظ ڪرڻ.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎭
+            </div>
+
+            <h3>
+                ادبي سرگرميون
+            </h3>
+
+            <p>
+                مشاعرا، ادبي گڏجاڻيون، سيمينار ۽
+                ثقافتي پروگرام منعقد ڪرڻ.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎙️
+            </div>
+
+            <h3>
+                ادبي گفتگو
+            </h3>
+
+            <p>
+                شاعرن ۽ اديبن سان انٽرويوز ۽
+                ادبي گفتگو کي عام ڪرڻ.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h3>
+                ڊجيٽل ادب
+            </h3>
+
+            <p>
+                سنڌي ادب کي جديد ٽيڪنالاجي ۽
+                ڊجيٽل ميڊيا سان ڳنڍڻ.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FUTURE VISION -->
+
+<section class="section">
+
+    <div class="content-box">
+
+        <h3>
+            اسان جو مستقبل جو خواب
+        </h3>
+
+        <p>
+            اسان جو خواب آهي ته سنڌي ادبي سنگت شاخ
+            شهدادپور جو هي پليٽ فارم وقت سان گڏ هڪ
+            مڪمل ڊجيٽل ادبي مرڪز بڻجي.
+        </p>
+
+        <p>
+            مستقبل ۾ هتي 15 ڏينهن وارو ادبي رسالو،
+            شاعرن جا انٽرويو، مشاعرا، ادبي خبرون،
+            ليجنڊري شاعرن سان شامون، خاص ايڊيشن ۽
+            سنڌي ادب جو جامع ڊجيٽل آرڪائيو موجود هوندو.
+        </p>
+
+        <p>
+            اسان چاهيون ٿا ته سنڌي ادب جو هي خزانو
+            دنيا جي هر ڪنڊ ۾ موجود سنڌين تائين پهچي.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <p>
+        "ادب صرف لفظن جو مجموعو ناهي،
+        ادب قوم جي سوچ، احساس ۽ سڃاڻپ جو آئينو آهي."
+    </p>
+
+    <small>
+        سنڌي ادبي سنگت — شاخ شهدادپور
+    </small>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        سنڌي ادبي سنگت شاخ شهدادپور
+    </h3>
+
+    <p>
+        سنڌي ادب • شاعري • ثقافت • تاريخ
+    </p>
+
+    <div class="social">
+
+        <a href="#">📘</a>
+        <a href="#">▶️</a>
+        <a href="#">💬</a>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 سنڌي ادبي سنگت شاخ شهدادپور
+        </p>
+
+        <p>
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
