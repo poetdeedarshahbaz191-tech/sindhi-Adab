@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sd" dir="rtl">
 
@@ -8,8 +7,7 @@
 
 <title>سنڌي ادبي سنگت شاخ شهدادپور</title>
 
-<meta name="description"
-content="سنڌي ادبي سنگت شاخ شهدادپور — ادب، شاعري، ڪهاڻيون، مشاعرا، انٽرويوز ۽ سنڌي ادب جو ڊجيٽل آرڪائيو.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,296 +17,614 @@ content="سنڌي ادبي سنگت شاخ شهدادپور — ادب، شاع�
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:
-    "Noto Nastaliq Urdu",
-    "Noto Sans Sindhi",
-    Arial,
-    sans-serif;
+    font-family:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif;
     background:#f7f3ea;
-    color:#29231d;
-    line-height:1.9;
+    color:#292018;
+    overflow-x:hidden;
 }
 
-/* HEADER */
+/* =========================
+   ANIMATED INTRO
+========================= */
 
-header{
-    background:linear-gradient(135deg,#183b2b,#24583e);
-    color:white;
-    padding:25px 15px;
+.intro{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#21170f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:introHide 1s ease forwards;
+    animation-delay:4.5s;
+}
+
+.intro-content{
     text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.2);
+    color:#f7d27a;
+    animation:introZoom 4s ease forwards;
 }
 
-.logo{
-    width:90px;
-    height:90px;
-    margin:auto;
+.intro-logo{
+    width:145px;
+    height:145px;
+    border:3px solid #d9ad52;
     border-radius:50%;
-    background:#d4af37;
-    color:#183b2b;
+    margin:auto;
     display:flex;
     align-items:center;
     justify-content:center;
+    font-family:Arial,sans-serif;
     font-size:42px;
     font-weight:bold;
-    border:4px solid white;
+    letter-spacing:5px;
+    box-shadow:
+        0 0 15px rgba(217,173,82,.5),
+        0 0 45px rgba(217,173,82,.25);
+    animation:logoSpin 2s ease;
 }
 
-header h1{
-    font-size:32px;
-    margin-top:10px;
+.intro-title{
+    margin-top:28px;
+    font-size:clamp(30px,7vw,70px);
+    font-weight:700;
+    opacity:0;
+    animation:titleShow 1.5s ease forwards;
+    animation-delay:1s;
 }
 
-header p{
-    font-size:17px;
-    opacity:.9;
+.intro-subtitle{
+    font-size:clamp(20px,4vw,38px);
+    opacity:0;
+    animation:titleShow 1.5s ease forwards;
+    animation-delay:1.8s;
 }
 
-/* NAVIGATION */
+.intro-line{
+    width:0;
+    height:2px;
+    background:#d9ad52;
+    margin:15px auto;
+    animation:lineShow 1s ease forwards;
+    animation-delay:2.5s;
+}
 
-nav{
-    background:#102c20;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:5px;
-    padding:8px;
+.intro-motto{
+    font-size:18px;
+    color:#eee0bc;
+    opacity:0;
+    animation:titleShow 1.5s ease forwards;
+    animation-delay:2.8s;
+}
+
+@keyframes logoSpin{
+    from{
+        transform:scale(.2) rotate(-180deg);
+        opacity:0;
+    }
+    to{
+        transform:scale(1) rotate(0);
+        opacity:1;
+    }
+}
+
+@keyframes titleShow{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes lineShow{
+    to{
+        width:220px;
+    }
+}
+
+@keyframes introZoom{
+    0%{transform:scale(.85);}
+    70%{transform:scale(1);}
+    100%{transform:scale(1.04);}
+}
+
+@keyframes introHide{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:
+        linear-gradient(135deg,#24180f,#4b2d16,#24180f);
+    color:white;
+    padding:18px 5%;
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,.25);
+}
+
+.header-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.mini-logo{
+    width:58px;
+    height:58px;
+    border:2px solid #d9ad52;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#f5cf76;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.brand-text h2{
+    color:#f5cf76;
+    font-size:23px;
+}
+
+.brand-text p{
+    color:#eadfcb;
+    font-size:14px;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    padding:8px 14px;
-    border-radius:6px;
-    font-size:16px;
+    padding:8px 12px;
+    border-radius:20px;
+    transition:.3s;
+    font-size:15px;
 }
 
 nav a:hover{
-    background:#d4af37;
-    color:#102c20;
+    background:#d9ad52;
+    color:#24180f;
+    transform:translateY(-2px);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    min-height:420px;
+    min-height:700px;
+    position:relative;
+    overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:40px 20px;
-
     background:
-    linear-gradient(
-        rgba(10,35,24,.78),
-        rgba(10,35,24,.78)
-    ),
-    url("https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=80");
-
-    background-size:cover;
-    background-position:center;
+        radial-gradient(circle at 50% 40%,rgba(218,177,91,.18),transparent 35%),
+        linear-gradient(135deg,#382315,#1e140d);
     color:white;
 }
 
+.hero::before,
+.hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(217,173,82,.2);
+}
+
+.hero::before{
+    width:600px;
+    height:600px;
+    animation:orbit 18s linear infinite;
+}
+
+.hero::after{
+    width:850px;
+    height:850px;
+    animation:orbit 25s linear infinite reverse;
+}
+
+@keyframes orbit{
+    from{transform:rotate(0deg) translateX(20px);}
+    to{transform:rotate(360deg) translateX(20px);}
+}
+
 .hero-content{
-    max-width:850px;
+    position:relative;
+    z-index:2;
+    padding:40px 20px;
+}
+
+.hero-logo{
+    width:180px;
+    height:180px;
+    margin:0 auto 25px;
+    border:4px solid #d9ad52;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.15);
+    box-shadow:
+        0 0 25px rgba(217,173,82,.3),
+        inset 0 0 30px rgba(217,173,82,.08);
+    animation:
+        heroLogo 3s ease infinite alternate,
+        fadeUp 1.2s ease;
+}
+
+.logo-big{
+    font-family:Arial,sans-serif;
+    font-size:48px;
+    font-weight:bold;
+    color:#f5cf76;
+    letter-spacing:6px;
+}
+
+.logo-small{
+    font-size:14px;
+    color:#eee0bc;
+    margin-top:5px;
+}
+
+@keyframes heroLogo{
+    from{
+        transform:scale(1);
+        box-shadow:0 0 20px rgba(217,173,82,.25);
+    }
+    to{
+        transform:scale(1.04);
+        box-shadow:0 0 50px rgba(217,173,82,.5);
+    }
+}
+
+.hero h1{
+    font-size:clamp(40px,8vw,86px);
+    color:#f5cf76;
+    line-height:1.5;
+    font-weight:700;
+    animation:fadeUp 1.3s ease;
 }
 
 .hero h2{
-    font-size:42px;
-    color:#f3d675;
-    margin-bottom:15px;
+    font-size:clamp(25px,5vw,48px);
+    font-weight:500;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero-line{
+    width:280px;
+    max-width:80%;
+    height:2px;
+    background:#d9ad52;
+    margin:25px auto;
+    animation:expandLine 2s ease;
 }
 
 .hero p{
-    font-size:21px;
-    margin-bottom:25px;
+    font-size:clamp(18px,3vw,25px);
+    color:#eee0bc;
+    animation:fadeUp 1.8s ease;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    animation:fadeUp 2s ease;
 }
 
 .btn{
-    display:inline-block;
-    background:#d4af37;
-    color:#102c20;
     text-decoration:none;
-    padding:10px 24px;
-    border-radius:7px;
-    font-weight:bold;
-    margin:5px;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#d9ad52;
+    color:#24180f;
+}
+
+.btn-secondary{
+    border:1px solid #d9ad52;
+    color:#f5cf76;
 }
 
 .btn:hover{
-    background:white;
+    transform:translateY(-5px) scale(1.03);
 }
 
-/* SECTION */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-.section{
+@keyframes expandLine{
+    from{width:0;}
+    to{width:280px;}
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container{
     max-width:1200px;
     margin:auto;
-    padding:45px 20px;
+    padding:70px 20px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:45px;
 }
 
 .section-title h2{
-    color:#183b2b;
-    font-size:30px;
+    font-size:38px;
+    color:#543316;
 }
 
 .section-title p{
-    color:#746b61;
+    color:#806b54;
+    font-size:18px;
 }
 
-/* CARDS */
+/* =========================
+   WELCOME
+========================= */
+
+.welcome{
+    background:#fffdf8;
+    text-align:center;
+}
+
+.welcome-box{
+    max-width:900px;
+    margin:auto;
+}
+
+.welcome h2{
+    color:#543316;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.welcome h3{
+    font-size:27px;
+    color:#8b642f;
+    margin-bottom:15px;
+}
+
+.welcome p{
+    font-size:20px;
+    line-height:2.2;
+}
+
+/* =========================
+   CARDS
+========================= */
 
 .cards{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
     background:white;
-    border-radius:12px;
-    padding:25px;
+    padding:30px 22px;
+    border-radius:20px;
     text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    transition:.3s;
-    border-top:4px solid #d4af37;
+    box-shadow:0 8px 25px rgba(63,42,20,.1);
+    border:1px solid #eadfc9;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:4px;
+    background:#d9ad52;
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 22px rgba(0,0,0,.14);
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(63,42,20,.18);
 }
 
-.card .icon{
-    font-size:45px;
-    margin-bottom:10px;
+.icon{
+    font-size:48px;
+    margin-bottom:15px;
 }
 
 .card h3{
-    color:#183b2b;
-    margin-bottom:8px;
+    font-size:25px;
+    color:#5b391d;
+    margin-bottom:12px;
 }
 
 .card p{
-    color:#625a51;
-    font-size:15px;
+    line-height:1.9;
+    color:#6c5a48;
 }
 
 .card a{
     display:inline-block;
-    margin-top:12px;
-    color:#9a7510;
+    margin-top:15px;
     text-decoration:none;
+    color:#9a6d2c;
     font-weight:bold;
 }
 
-/* FEATURED */
-
-.featured{
-    background:#eee7d7;
-}
-
-.featured-box{
-    background:white;
-    border-radius:14px;
-    padding:30px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-}
-
-.featured-box h3{
-    color:#183b2b;
-    font-size:25px;
-}
-
-.featured-box p{
-    margin:10px 0;
-}
-
-/* QUOTE */
+/* =========================
+   QUOTE
+========================= */
 
 .quote{
-    background:#183b2b;
+    background:
+        linear-gradient(rgba(38,24,14,.93),rgba(38,24,14,.93)),
+        url("");
     color:white;
     text-align:center;
-    padding:55px 20px;
+    padding:90px 20px;
+}
+
+.quote blockquote{
+    max-width:900px;
+    margin:auto;
+    font-size:clamp(25px,4vw,42px);
+    line-height:2;
+    color:#f5cf76;
 }
 
 .quote p{
-    font-size:25px;
-    max-width:850px;
-    margin:auto;
+    margin-top:20px;
+    font-size:20px;
+    color:#eadfcb;
 }
 
-.quote small{
-    display:block;
-    margin-top:15px;
-    color:#d4af37;
+/* =========================
+   WRITE SECTION
+========================= */
+
+.write{
+    background:#efe5d3;
+    text-align:center;
 }
 
-/* FOOTER */
+.write h2{
+    color:#543316;
+    font-size:38px;
+}
+
+.write p{
+    font-size:20px;
+    margin:15px auto 25px;
+    max-width:700px;
+}
+
+.write-btn{
+    display:inline-block;
+    background:#543316;
+    color:white;
+    text-decoration:none;
+    padding:13px 30px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.write-btn:hover{
+    background:#d9ad52;
+    color:#24180f;
+    transform:scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#102c20;
-    color:white;
+    background:#21170f;
+    color:#eee0bc;
     text-align:center;
-    padding:30px 15px;
+    padding:45px 20px;
+}
+
+.footer-logo{
+    width:80px;
+    height:80px;
+    border:2px solid #d9ad52;
+    border-radius:50%;
+    margin:0 auto 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#f5cf76;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:23px;
 }
 
 footer h3{
-    color:#d4af37;
-}
-
-footer p{
-    margin:5px;
-    font-size:14px;
+    color:#f5cf76;
+    font-size:25px;
 }
 
 .social{
-    margin:15px 0;
+    margin:20px 0;
 }
 
 .social a{
-    color:white;
     text-decoration:none;
+    font-size:25px;
     margin:0 8px;
-    font-size:20px;
 }
 
-.copyright{
-    border-top:1px solid rgba(255,255,255,.2);
-    margin-top:20px;
-    padding-top:15px;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* MOBILE */
+@media(max-width:800px){
 
-@media(max-width:600px){
-
-    header h1{
-        font-size:25px;
+    header{
+        position:relative;
     }
 
-    .hero{
-        min-height:360px;
+    .header-inner{
+        flex-direction:column;
     }
 
-    .hero h2{
-        font-size:30px;
-    }
-
-    .hero p{
-        font-size:17px;
+    nav{
+        width:100%;
     }
 
     nav a{
@@ -316,8 +632,35 @@ footer p{
         padding:6px 9px;
     }
 
-    .quote p{
-        font-size:20px;
+    .hero{
+        min-height:650px;
+    }
+
+    .hero-logo{
+        width:145px;
+        height:145px;
+    }
+
+    .logo-big{
+        font-size:38px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    .intro-logo{
+        width:120px;
+        height:120px;
+        font-size:34px;
+    }
+
+    .intro-title{
+        font-size:32px;
     }
 
 }
@@ -328,107 +671,200 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     ANIMATED INTRO
+========================= -->
+
+<div class="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-logo">
+            س ا س
+        </div>
+
+        <div class="intro-title">
+            سنڌي ادبي سنگت
+        </div>
+
+        <div class="intro-subtitle">
+            شاخ شهدادپور
+        </div>
+
+        <div class="intro-line"></div>
+
+        <div class="intro-motto">
+            سنڌي ادب جي خدمت، اسان جو عزم
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-    <div class="logo">ادب</div>
+<div class="header-inner">
 
-    <h1>سنڌي ادبي سنگت</h1>
+    <div class="brand">
 
-    <p>شاخ شهدادپور</p>
+        <div class="mini-logo">
+            س ا س
+        </div>
+
+        <div class="brand-text">
+
+            <h2>سنڌي ادبي سنگت</h2>
+
+            <p>شاخ شهدادپور</p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">🏠 گهر</a>
+
+        <a href="about.html">اسان بابت</a>
+
+        <a href="magazine.html">📖 رسالو</a>
+
+        <a href="poets.html">✍️ شاعر</a>
+
+        <a href="stories.html">📚 ڪهاڻيون</a>
+
+        <a href="events.html">🎭 پروگرام</a>
+
+        <a href="interviews.html">🎙️ انٽرويو</a>
+
+        <a href="archive.html">🗄️ آرڪائيو</a>
+
+        <a href="write.html">📝 لکو</a>
+
+    </nav>
+
+</div>
 
 </header>
 
 
-<!-- NAVIGATION -->
 
-<nav>
-
-    <a href="index.html">🏠 گهر</a>
-    <a href="about.html">اسان بابت</a>
-    <a href="magazine.html">📖 رسالو</a>
-    <a href="poets.html">✍️ شاعر</a>
-    <a href="stories.html">📚 ڪهاڻيون</a>
-    <a href="events.html">🎭 پروگرام</a>
-    <a href="interviews.html">🎙️ انٽرويو</a>
-    <a href="archive.html">🗄️ آرڪائيو</a>
-    <a href="write.html">📝 لکو</a>
-
-</nav>
-
-
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h2>سنڌي ادب جي خدمت، اسان جو عزم</h2>
 
-        <p>
-            سنڌي ادبي سنگت شاخ شهدادپور جي
-            ادبي سرگرمين، شاعري، ڪهاڻين،
-            مشاعرن ۽ ادبي ورثي جو ڊجيٽل مرڪز
-        </p>
+    <div class="hero-logo">
 
-        <a href="magazine.html" class="btn">
+        <div class="logo-big">
+            س ا س
+        </div>
+
+        <div class="logo-small">
+            سنڌي ادبي سنگت
+        </div>
+
+    </div>
+
+
+    <h1>
+        سنڌي ادبي سنگت
+    </h1>
+
+    <h2>
+        شاخ شهدادپور
+    </h2>
+
+
+    <div class="hero-line"></div>
+
+
+    <p>
+        سنڌي ادب جي خدمت، اسان جو عزم
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="magazine.html" class="btn btn-primary">
             📖 تازو رسالو پڙهو
         </a>
 
-        <a href="events.html" class="btn">
+        <a href="events.html" class="btn btn-secondary">
             🎭 ادبي پروگرام
         </a>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- WELCOME -->
 
-<section class="section">
+<!-- =========================
+     WELCOME
+========================= -->
 
-    <div class="section-title">
+<section class="welcome">
+
+<div class="container">
+
+    <div class="welcome-box">
 
         <h2>ڀليڪار</h2>
 
-        <p>
-            سنڌي ادب جي هن ڊجيٽل سفر ۾ اوهان کي ڀليڪار
-        </p>
-
-    </div>
-
-    <div class="featured-box">
-
-        <h3>سنڌي ادبي سنگت شاخ شهدادپور</h3>
+        <h3>
+            سنڌي ادبي سنگت شاخ شهدادپور
+        </h3>
 
         <p>
+            سنڌي ادب جي هن ڊجيٽل سفر ۾ اوهان کي ڀليڪار.
             هي پليٽ فارم سنڌي شاعرن، اديبن، ڪهاڻيڪارن،
             محققن ۽ ادب سان محبت ڪندڙن لاءِ هڪ گڏيل
             ادبي مرڪز طور تيار ڪيو پيو وڃي.
         </p>
 
         <p>
-            هتي اوهان کي شاعري، ڪهاڻيون، مضمون،
-            انٽرويوز، مشاعرا، ادبي تقريبون ۽
-            سنڌي ادب جو ڊجيٽل آرڪائيو ملندو.
+            هتي اوهان کي شاعري، ڪهاڻيون، مضمون، انٽرويوز،
+            مشاعرا، ادبي تقريبون ۽ سنڌي ادب جو ڊجيٽل
+            آرڪائيو ملندو.
         </p>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- MAIN CATEGORIES -->
 
-<section class="section">
+<!-- =========================
+     LITERARY WORLD
+========================= -->
+
+<section>
+
+<div class="container">
 
     <div class="section-title">
 
         <h2>ادبي دنيا</h2>
 
-        <p>اسان جي پليٽ فارم جون اهم شعبا</p>
+        <p>
+            اسان جي پليٽ فارم جا اهم شعبا
+        </p>
 
     </div>
 
@@ -440,11 +876,13 @@ footer p{
 
             <div class="icon">📖</div>
 
-            <h3>15 ڏينهن وارو رسالو</h3>
+            <h3>
+                15 ڏينهن وارو رسالو
+            </h3>
 
             <p>
-                سنڌي شاعري، ڪهاڻيون، مضمون ۽
-                ادبي مواد هر پندرهن ڏينهن تي.
+                سنڌي شاعري، ڪهاڻيون، مضمون ۽ ادبي مواد
+                هر پندرهن ڏينهن تي.
             </p>
 
             <a href="magazine.html">
@@ -454,11 +892,14 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">✍️</div>
 
-            <h3>شاعر ۽ اديب</h3>
+            <h3>
+                شاعر ۽ اديب
+            </h3>
 
             <p>
                 سنڌ جي شاعرن ۽ اديبن جو تعارف،
@@ -472,15 +913,18 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">🎭</div>
 
-            <h3>مشاعرا ۽ تقريبون</h3>
+            <h3>
+                مشاعرا ۽ تقريبون
+            </h3>
 
             <p>
-                ادبي گڏجاڻين، مشاعرن ۽
-                ثقافتي پروگرامن جي ڪوريج.
+                ادبي گڏجاڻين، مشاعرن ۽ ثقافتي
+                پروگرامن جي ڪوريج.
             </p>
 
             <a href="events.html">
@@ -490,11 +934,14 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">🎙️</div>
 
-            <h3>شاعرن جا انٽرويو</h3>
+            <h3>
+                شاعرن جا انٽرويو
+            </h3>
 
             <p>
                 سنڌ جي معروف شاعرن ۽ اديبن سان
@@ -508,15 +955,18 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">🌟</div>
 
-            <h3>ليجنڊري شاعرن سان شام</h3>
+            <h3>
+                ليجنڊري شاعرن سان شام
+            </h3>
 
             <p>
-                سنڌ جي وڏن شاعرن جي زندگي،
-                فن ۽ فڪر سان خاص شامون.
+                سنڌ جي وڏن شاعرن جي زندگي، فن ۽
+                فڪر سان خاص شامون.
             </p>
 
             <a href="events.html">
@@ -526,15 +976,18 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">🗄️</div>
 
-            <h3>ڊجيٽل ادبي آرڪائيو</h3>
+            <h3>
+                ڊجيٽل ادبي آرڪائيو
+            </h3>
 
             <p>
-                سنڌي ادب سان لاڳاپيل تاريخي
-                مواد کي محفوظ ڪرڻ جو مرڪز.
+                سنڌي ادب سان لاڳاپيل تاريخي مواد کي
+                محفوظ ڪرڻ جو مرڪز.
             </p>
 
             <a href="archive.html">
@@ -543,19 +996,27 @@ footer p{
 
         </div>
 
-
     </div>
+
+</div>
 
 </section>
 
 
-<!-- FEATURED MAGAZINE -->
 
-<section class="section featured">
+<!-- =========================
+     LATEST MATERIAL
+========================= -->
+
+<section class="welcome">
+
+<div class="container">
 
     <div class="section-title">
 
-        <h2>📰 تازو ادبي مواد</h2>
+        <h2>
+            📰 تازو ادبي مواد
+        </h2>
 
         <p>
             سنڌي ادب مان چونڊ مواد
@@ -571,7 +1032,9 @@ footer p{
 
             <div class="icon">🖋️</div>
 
-            <h3>تازو شعر</h3>
+            <h3>
+                تازو شعر
+            </h3>
 
             <p>
                 شاعرن جي نئين شاعري ۽ غزل.
@@ -584,11 +1047,14 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">📚</div>
 
-            <h3>ڪهاڻي</h3>
+            <h3>
+                ڪهاڻي
+            </h3>
 
             <p>
                 سنڌي ڪهاڻيڪارن جون چونڊ ڪهاڻيون.
@@ -601,11 +1067,14 @@ footer p{
         </div>
 
 
+
         <div class="card">
 
             <div class="icon">📰</div>
 
-            <h3>ادبي خبرون</h3>
+            <h3>
+                ادبي خبرون
+            </h3>
 
             <p>
                 سنڌ جي ادبي دنيا جون تازيون خبرون.
@@ -617,62 +1086,70 @@ footer p{
 
         </div>
 
-
     </div>
+
+</div>
 
 </section>
 
 
-<!-- QUOTE -->
+
+<!-- =========================
+     QUOTE
+========================= -->
 
 <section class="quote">
 
-    <p>
+    <blockquote>
         "ادب قومن جي روح جو آواز آهي،
         ۽ شاعر ان آواز جو ترجمان."
+    </blockquote>
+
+    <p>
+        سنڌي ادبي سنگت — شاخ شهدادپور
     </p>
 
-    <small>
-        سنڌي ادبي سنگت — شاخ شهدادپور
-    </small>
+</section>
+
+
+
+<!-- =========================
+     WRITE
+========================= -->
+
+<section class="write">
+
+<div class="container">
+
+    <h2>
+        📝 پنهنجي تخليق موڪليو
+    </h2>
+
+    <p>
+        اوهان به سنڌي ادب جي هن سفر جو حصو بڻجو.
+        شاعري، ڪهاڻي، مضمون، تحقيق يا ٻيو ادبي
+        مواد اسان ڏانهن موڪليو.
+    </p>
+
+    <a href="write.html" class="write-btn">
+        پنهنجي لکڻي موڪليو
+    </a>
+
+</div>
 
 </section>
 
 
-<!-- WRITE FOR US -->
 
-<section class="section">
-
-    <div class="section-title">
-
-        <h2>📝 پنهنجي تخليق موڪليو</h2>
-
-        <p>
-            اوهان به سنڌي ادب جي هن سفر جو حصو بڻجو
-        </p>
-
-    </div>
-
-
-    <div class="featured-box" style="text-align:center;">
-
-        <p>
-            شاعري، ڪهاڻي، مضمون، تحقيق يا ٻيو
-            ادبي مواد اسان ڏانهن موڪليو.
-        </p>
-
-        <a href="write.html" class="btn">
-            پنهنجي لکڻي موڪليو
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
+
+    <div class="footer-logo">
+        س ا س
+    </div>
 
     <h3>
         سنڌي ادبي سنگت شاخ شهدادپور
@@ -685,24 +1162,22 @@ footer p{
 
     <div class="social">
 
-        <a href="#" title="Facebook">📘</a>
-        <a href="#" title="YouTube">▶️</a>
-        <a href="#" title="WhatsApp">💬</a>
+        <a href="#">📘</a>
+
+        <a href="#">▶️</a>
+
+        <a href="#">💬</a>
 
     </div>
 
 
-    <div class="copyright">
+    <p>
+        © 2026 سنڌي ادبي سنگت شاخ شهدادپور
+    </p>
 
-        <p>
-            © 2026 سنڌي ادبي سنگت شاخ شهدادپور
-        </p>
-
-        <p>
-            All Rights Reserved.
-        </p>
-
-    </div>
+    <p>
+        All Rights Reserved.
+    </p>
 
 </footer>
 
