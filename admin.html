@@ -24,7 +24,9 @@ body{
     line-height:1.8;
 }
 
-/* TOP HEADER */
+/* =========================
+   TOP HEADER
+========================= */
 
 .topbar{
     background:#183b2b;
@@ -76,14 +78,18 @@ body{
     font-weight:bold;
 }
 
-/* LAYOUT */
+/* =========================
+   LAYOUT
+========================= */
 
 .dashboard{
     display:flex;
     min-height:calc(100vh - 82px);
 }
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar{
     width:250px;
@@ -114,7 +120,9 @@ body{
     color:#102c20;
 }
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .main{
     flex:1;
@@ -133,7 +141,9 @@ body{
     color:#666;
 }
 
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 .stats{
     display:grid;
@@ -163,7 +173,9 @@ body{
     color:#777;
 }
 
-/* QUICK ACTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
     background:white;
@@ -177,6 +189,10 @@ body{
     font-size:23px;
     margin-bottom:18px;
 }
+
+/* =========================
+   QUICK ACTIONS
+========================= */
 
 .actions{
     display:grid;
@@ -208,7 +224,9 @@ body{
     margin-top:7px;
 }
 
-/* RECENT */
+/* =========================
+   TABLE
+========================= */
 
 .table-wrap{
     overflow-x:auto;
@@ -217,7 +235,7 @@ body{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:650px;
+    min-width:700px;
 }
 
 th{
@@ -236,6 +254,10 @@ td{
     color:#555;
 }
 
+/* =========================
+   STATUS
+========================= */
+
 .status{
     padding:4px 10px;
     border-radius:15px;
@@ -253,19 +275,30 @@ td{
     color:#155724;
 }
 
-.draft{
-    background:#e2e3e5;
-    color:#555;
+.rejected{
+    background:#fde2e2;
+    color:#a11b1b;
 }
 
-.view-btn{
+/* =========================
+   BUTTONS
+========================= */
+
+.view-btn,
+.approve-btn,
+.reject-btn{
     border:none;
-    background:#183b2b;
-    color:white;
-    padding:6px 12px;
+    padding:7px 11px;
     border-radius:15px;
     cursor:pointer;
     font-family:inherit;
+    margin:2px;
+    transition:.3s;
+}
+
+.view-btn{
+    background:#183b2b;
+    color:white;
 }
 
 .view-btn:hover{
@@ -273,7 +306,88 @@ td{
     color:#102c20;
 }
 
-/* FOOTER */
+.approve-btn{
+    background:#d4edda;
+    color:#155724;
+}
+
+.approve-btn:hover{
+    transform:scale(1.05);
+}
+
+.reject-btn{
+    background:#fde2e2;
+    color:#a11b1b;
+}
+
+.reject-btn:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background:rgba(0,0,0,.65);
+    padding:30px 15px;
+}
+
+.modal-content{
+    background:white;
+    max-width:850px;
+    margin:30px auto;
+    padding:30px;
+    border-radius:15px;
+    position:relative;
+    direction:rtl;
+}
+
+.close-modal{
+    position:absolute;
+    left:20px;
+    top:12px;
+    font-size:30px;
+    cursor:pointer;
+    color:#a11b1b;
+}
+
+.modal-content h2{
+    color:#183b2b;
+    margin-bottom:15px;
+}
+
+.modal-info{
+    background:#f7f3ea;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.modal-info p{
+    margin:5px 0;
+}
+
+.submission-content{
+    white-space:pre-wrap;
+    background:#fff;
+    border:1px solid #ddd;
+    padding:20px;
+    border-radius:10px;
+    color:#333;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
     text-align:center;
@@ -281,11 +395,9 @@ td{
     padding:20px;
 }
 
-/* MOBILE */
-
-.menu-toggle{
-    display:none;
-}
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:1000px){
 
@@ -371,6 +483,11 @@ td{
         padding:15px 10px;
     }
 
+    .modal-content{
+        padding:25px 15px;
+        margin:10px auto;
+    }
+
 }
 
 </style>
@@ -381,19 +498,27 @@ td{
 <body>
 
 
-<!-- TOPBAR -->
+<!-- =========================
+     TOPBAR
+========================= -->
 
 <header class="topbar">
 
     <div class="brand">
 
-        <div class="brand-logo">ادب</div>
+        <div class="brand-logo">
+            ادب
+        </div>
 
         <div>
 
-            <h1>سنڌي ادبي سنگت</h1>
+            <h1>
+                سنڌي ادبي سنگت
+            </h1>
 
-            <p>شاخ شهدادپور — Admin Dashboard</p>
+            <p>
+                شاخ شهدادپور — Admin Dashboard
+            </p>
 
         </div>
 
@@ -410,7 +535,9 @@ td{
 </header>
 
 
-<!-- DASHBOARD -->
+<!-- =========================
+     DASHBOARD
+========================= -->
 
 <div class="dashboard">
 
@@ -420,97 +547,83 @@ td{
 <aside class="sidebar">
 
     <div class="sidebar-title">
-
         📋 انتظامي مينيو
-
     </div>
 
 
-    <a href="admin.html"
-       class="active">
-
+    <a href="admin.html" class="active">
         🏠 Dashboard
-
     </a>
 
 
     <a href="#submissions">
-
         📥 موڪليل تخليقون
-
     </a>
 
 
     <a href="#magazine">
-
         📰 رسالو
-
     </a>
 
 
     <a href="#poets">
-
         ✍️ شاعر ۽ اديب
-
     </a>
 
 
     <a href="#stories">
-
         📖 ڪهاڻيون
-
     </a>
 
 
     <a href="#events">
-
         🎤 تقريبون
-
     </a>
 
 
     <a href="#media">
-
         🎥 ميڊيا
-
     </a>
 
 
     <a href="#gallery">
-
         📸 گيلري
-
     </a>
 
 
     <a href="#messages">
-
         💬 پيغام
-
     </a>
-
 
 </aside>
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <main class="main">
 
 
+<!-- WELCOME -->
+
 <section class="welcome">
 
-    <h2>ڀليڪار، ايڊمن! 👋</h2>
+    <h2>
+        ڀليڪار، ايڊمن! 👋
+    </h2>
 
     <p>
         هتي توهان سنڌي ادبي سنگت شاخ شهدادپور جي
-        ويب سائيٽ جو سمورو ادبي مواد منظم ڪري سگهو ٿا.
+        ويب سائيٽ جو ادبي مواد منظم ڪري سگهو ٿا.
     </p>
 
 </section>
 
 
-<!-- STATS -->
+<!-- =========================
+     STATS
+========================= -->
 
 <section class="stats">
 
@@ -562,11 +675,15 @@ td{
 </section>
 
 
-<!-- QUICK ACTIONS -->
+<!-- =========================
+     QUICK ACTIONS
+========================= -->
 
 <section class="section">
 
-    <h2>⚡ تڪڙا آپشن</h2>
+    <h2>
+        ⚡ تڪڙا آپشن
+    </h2>
 
 
     <div class="actions">
@@ -576,7 +693,9 @@ td{
 
             <div class="icon">📥</div>
 
-            <h3>تخليق شامل ڪريو</h3>
+            <h3>
+                تخليق شامل ڪريو
+            </h3>
 
         </a>
 
@@ -585,7 +704,9 @@ td{
 
             <div class="icon">📰</div>
 
-            <h3>رسالو منظم ڪريو</h3>
+            <h3>
+                رسالو منظم ڪريو
+            </h3>
 
         </a>
 
@@ -594,7 +715,9 @@ td{
 
             <div class="icon">🎤</div>
 
-            <h3>تقريب شامل ڪريو</h3>
+            <h3>
+                تقريب شامل ڪريو
+            </h3>
 
         </a>
 
@@ -603,7 +726,9 @@ td{
 
             <div class="icon">🎥</div>
 
-            <h3>ميڊيا شامل ڪريو</h3>
+            <h3>
+                ميڊيا شامل ڪريو
+            </h3>
 
         </a>
 
@@ -612,7 +737,9 @@ td{
 
             <div class="icon">📸</div>
 
-            <h3>تصوير شامل ڪريو</h3>
+            <h3>
+                تصوير شامل ڪريو
+            </h3>
 
         </a>
 
@@ -621,7 +748,9 @@ td{
 
             <div class="icon">💬</div>
 
-            <h3>پيغام ڏسو</h3>
+            <h3>
+                پيغام ڏسو
+            </h3>
 
         </a>
 
@@ -631,11 +760,15 @@ td{
 </section>
 
 
-<!-- RECENT SUBMISSIONS -->
+<!-- =========================
+     SUBMISSIONS
+========================= -->
 
 <section class="section" id="submissions">
 
-    <h2>📥 تازيون موڪليل تخليقون</h2>
+    <h2>
+        📥 موڪليل تخليقون
+    </h2>
 
 
     <div class="table-wrap">
@@ -663,22 +796,18 @@ td{
 
             <tbody id="submissionTable">
 
-
                 <tr>
 
                     <td colspan="5"
                         style="text-align:center;">
 
-                        Firebase سان ڳنڍڻ کان پوءِ
-                        موڪليل تخليقون هتي ظاهر ٿينديون.
+                        ⏳ موڪليل تخليقون لوڊ ٿي رهيون آهن...
 
                     </td>
 
                 </tr>
 
-
             </tbody>
-
 
         </table>
 
@@ -687,11 +816,16 @@ td{
 </section>
 
 
-<!-- RECENT MESSAGES -->
+<!-- =========================
+     MESSAGES
+========================= -->
 
 <section class="section" id="messages">
 
-    <h2>💬 تازا پيغام</h2>
+    <h2>
+        💬 تازا پيغام
+    </h2>
+
 
     <div class="table-wrap">
 
@@ -714,15 +848,14 @@ td{
             </thead>
 
 
-            <tbody id="messageTable">
+            <tbody>
 
                 <tr>
 
                     <td colspan="4"
                         style="text-align:center;">
 
-                        Firebase سان ڳنڍڻ کان پوءِ
-                        پيغام هتي ظاهر ٿيندا.
+                        پيغام سسٽم جلد شامل ڪيو ويندو.
 
                     </td>
 
@@ -747,27 +880,675 @@ td{
 
 </main>
 
+</div>
+
+
+<!-- =========================
+     SUBMISSION MODAL
+========================= -->
+
+<div id="submissionModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-modal"
+              onclick="closeModal()">
+
+            ×
+
+        </span>
+
+
+        <h2 id="modalTitle">
+            تخليق
+        </h2>
+
+
+        <div class="modal-info">
+
+            <p>
+                <strong>ليکڪ:</strong>
+
+                <span id="modalAuthor"></span>
+            </p>
+
+
+            <p>
+                <strong>قسم:</strong>
+
+                <span id="modalType"></span>
+            </p>
+
+
+            <p>
+                <strong>رابطو:</strong>
+
+                <span id="modalContact"></span>
+            </p>
+
+
+            <p>
+                <strong>اسٽيٽس:</strong>
+
+                <span id="modalStatus"></span>
+            </p>
+
+        </div>
+
+
+        <h3>
+            📖 مڪمل تخليق
+        </h3>
+
+
+        <div id="modalContent"
+             class="submission-content">
+
+        </div>
+
+
+    </div>
 
 </div>
 
 
-<script>
+<!-- =========================
+     FIREBASE JAVASCRIPT
+========================= -->
 
-/*
-=========================================
-ADMIN DASHBOARD
-Firebase connection will be added next.
-=========================================
-*/
+<script type="module">
+
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+    getDatabase,
+    ref,
+    onValue,
+    update
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCZBA8Bi7lV0bDpSYwgzgxV3xUbqP8YhH8",
+
+    authDomain:
+    "sindhi-adab-6ffba.firebaseapp.com",
+
+    databaseURL:
+    "https://sindhi-adab-6ffba-default-rtdb.firebaseio.com",
+
+    projectId:
+    "sindhi-adab-6ffba",
+
+    storageBucket:
+    "sindhi-adab-6ffba.firebasestorage.app",
+
+    messagingSenderId:
+    "956272042717",
+
+    appId:
+    "1:956272042717:web:2c9bbd84c0ebee1d72f134"
+
+};
+
+
+/* =========================
+   INITIALIZE FIREBASE
+========================= */
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const database =
+getDatabase(app);
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const submissionTable =
+document.getElementById("submissionTable");
+
+
+const submissionCount =
+document.getElementById("submissionCount");
+
+
+const submissionsRef =
+ref(database, "submissions");
+
+
+/* =========================
+   STORE SUBMISSIONS
+========================= */
+
+let allSubmissions = {};
+
+
+/* =========================
+   LOAD SUBMISSIONS
+========================= */
+
+onValue(
+    submissionsRef,
+
+    function(snapshot){
+
+
+        submissionTable.innerHTML = "";
+
+
+        if(!snapshot.exists()){
+
+
+            submissionTable.innerHTML = `
+
+                <tr>
+
+                    <td colspan="5"
+                        style="text-align:center;">
+
+                        📭 اڃا تائين ڪا تخليق موڪلي نه وئي آهي.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+
+            submissionCount.textContent = "0";
+
+
+            allSubmissions = {};
+
+
+            return;
+
+        }
+
+
+        allSubmissions =
+        snapshot.val();
+
+
+        const submissions =
+        Object.entries(allSubmissions);
+
+
+        submissionCount.textContent =
+        submissions.length;
+
+
+        submissions
+        .reverse()
+        .forEach(function([id, submission]){
+
+
+            const author =
+            submission.authorName ||
+            submission.name ||
+            "نامعلوم";
+
+
+            const title =
+            submission.title ||
+            "بغير عنوان";
+
+
+            const type =
+            submission.type ||
+            "—";
+
+
+            const status =
+            submission.status ||
+            "pending";
+
+
+            let statusText;
+            let statusClass;
+
+
+            if(status === "approved"){
+
+                statusText =
+                "✅ منظور ٿيل";
+
+                statusClass =
+                "approved";
+
+            }
+
+            else if(status === "rejected"){
+
+                statusText =
+                "❌ رد ٿيل";
+
+                statusClass =
+                "rejected";
+
+            }
+
+            else{
+
+                statusText =
+                "⏳ جائزي هيٺ";
+
+                statusClass =
+                "pending";
+
+            }
+
+
+            const row =
+            document.createElement("tr");
+
+
+            const authorCell =
+            document.createElement("td");
+
+            authorCell.textContent =
+            author;
+
+
+            const titleCell =
+            document.createElement("td");
+
+            titleCell.textContent =
+            title;
+
+
+            const typeCell =
+            document.createElement("td");
+
+            typeCell.textContent =
+            type;
+
+
+            const statusCell =
+            document.createElement("td");
+
+            const statusSpan =
+            document.createElement("span");
+
+            statusSpan.className =
+            "status " + statusClass;
+
+            statusSpan.textContent =
+            statusText;
+
+            statusCell.appendChild(
+                statusSpan
+            );
+
+
+            const actionCell =
+            document.createElement("td");
+
+
+            /* VIEW BUTTON */
+
+            const viewButton =
+            document.createElement("button");
+
+            viewButton.className =
+            "view-btn";
+
+            viewButton.textContent =
+            "👁️ پڙهو";
+
+            viewButton.onclick =
+            function(){
+
+                viewSubmission(id);
+
+            };
+
+
+            /* APPROVE BUTTON */
+
+            const approveButton =
+            document.createElement("button");
+
+            approveButton.className =
+            "approve-btn";
+
+            approveButton.textContent =
+            "✅ منظور";
+
+            approveButton.onclick =
+            function(){
+
+                approveSubmission(id);
+
+            };
+
+
+            /* REJECT BUTTON */
+
+            const rejectButton =
+            document.createElement("button");
+
+            rejectButton.className =
+            "reject-btn";
+
+            rejectButton.textContent =
+            "❌ رد";
+
+            rejectButton.onclick =
+            function(){
+
+                rejectSubmission(id);
+
+            };
+
+
+            actionCell.appendChild(
+                viewButton
+            );
+
+            actionCell.appendChild(
+                approveButton
+            );
+
+            actionCell.appendChild(
+                rejectButton
+            );
+
+
+            row.appendChild(authorCell);
+
+            row.appendChild(titleCell);
+
+            row.appendChild(typeCell);
+
+            row.appendChild(statusCell);
+
+            row.appendChild(actionCell);
+
+
+            submissionTable.appendChild(
+                row
+            );
+
+
+        });
+
+
+    }
+
+);
+
+
+/* =========================
+   VIEW SUBMISSION
+========================= */
+
+window.viewSubmission =
+function(id){
+
+
+    const submission =
+    allSubmissions[id];
+
+
+    if(!submission){
+
+        alert(
+            "❌ تخليق نه ملي سگهي."
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+    submission.title ||
+    "بغير عنوان";
+
+
+    document.getElementById(
+        "modalAuthor"
+    ).textContent =
+    submission.authorName ||
+    submission.name ||
+    "نامعلوم";
+
+
+    document.getElementById(
+        "modalType"
+    ).textContent =
+    submission.type ||
+    "—";
+
+
+    const contact =
+    [
+        submission.email,
+        submission.phone
+    ]
+    .filter(Boolean)
+    .join(" | ");
+
+
+    document.getElementById(
+        "modalContact"
+    ).textContent =
+    contact || "رابطو موجود ناهي";
+
+
+    document.getElementById(
+        "modalStatus"
+    ).textContent =
+    submission.status ||
+    "pending";
+
+
+    document.getElementById(
+        "modalContent"
+    ).textContent =
+    submission.content ||
+    "تخليق موجود ناهي.";
+
+
+    document.getElementById(
+        "submissionModal"
+    ).style.display =
+    "block";
+
+
+};
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+window.closeModal =
+function(){
+
+    document.getElementById(
+        "submissionModal"
+    ).style.display =
+    "none";
+
+};
+
+
+/* =========================
+   CLICK OUTSIDE MODAL
+========================= */
+
+window.onclick =
+function(event){
+
+    const modal =
+    document.getElementById(
+        "submissionModal"
+    );
+
+
+    if(event.target === modal){
+
+        modal.style.display =
+        "none";
+
+    }
+
+};
+
+
+/* =========================
+   APPROVE SUBMISSION
+========================= */
+
+window.approveSubmission =
+async function(id){
+
+
+    const confirmApprove =
+    confirm(
+        "ڇا توهان هن تخليق کي منظور ڪرڻ چاهيو ٿا؟"
+    );
+
+
+    if(!confirmApprove){
+
+        return;
+
+    }
+
+
+    try{
+
+
+        await update(
+
+            ref(
+                database,
+                "submissions/" + id
+            ),
+
+            {
+
+                status:"approved"
+
+            }
+
+        );
+
+
+        alert(
+            "✅ تخليق ڪاميابي سان منظور ڪئي وئي!"
+        );
+
+
+    }
+
+    catch(error){
+
+
+        console.error(error);
+
+
+        alert(
+            "❌ منظور ڪرڻ ۾ مسئلو پيش آيو."
+        );
+
+
+    }
+
+
+};
+
+
+/* =========================
+   REJECT SUBMISSION
+========================= */
+
+window.rejectSubmission =
+async function(id){
+
+
+    const confirmReject =
+    confirm(
+        "ڇا توهان هن تخليق کي رد ڪرڻ چاهيو ٿا؟"
+    );
+
+
+    if(!confirmReject){
+
+        return;
+
+    }
+
+
+    try{
+
+
+        await update(
+
+            ref(
+                database,
+                "submissions/" + id
+            ),
+
+            {
+
+                status:"rejected"
+
+            }
+
+        );
+
+
+        alert(
+            "❌ تخليق رد ڪئي وئي."
+        );
+
+
+    }
+
+    catch(error){
+
+
+        console.error(error);
+
+
+        alert(
+            "❌ رد ڪرڻ ۾ مسئلو پيش آيو."
+        );
+
+
+    }
+
+
+};
 
 
 console.log(
-"سنڌي ادبي سنگت Admin Dashboard Ready"
+    "سنڌي ادبي سنگت Admin Dashboard Firebase Ready"
 );
+
 
 </script>
 
 
 </body>
 
-</html>
+</htm>
